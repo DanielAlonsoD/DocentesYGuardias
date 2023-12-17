@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeFragment"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/botonGestionarPermisos"
+        style="?attr/buttonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:text="@string/textoGestionarPermisos"/>
+
+    <Button
+        android:id="@+id/botonTareasAdministrativas"
+        style="?attr/buttonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:text="@string/textoTareasAdministrativas"/>
+
+    <Button
+        android:id="@+id/botonNotificarAusencias"
+        style="?attr/buttonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:text="@string/textoNotificarAusencias"/>
+
+    <Button
+        android:id="@+id/botonFijarTareas"
+        style="?attr/buttonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:text="@string/textoFijarTareas"/>
+    <Button
+        android:id="@+id/botonAsignarGuardias"
+        style="?attr/buttonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:text="@string/textoAsignarGuardias"/>
+    <Button
+        android:id="@+id/botonElaboracionInformes"
+        style="?attr/buttonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:text="@string/textoElaborarInformes"/>
+
+</LinearLayout>

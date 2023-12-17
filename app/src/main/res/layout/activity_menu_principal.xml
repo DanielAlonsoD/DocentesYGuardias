@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MenuPrincipalActivity">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/encabezadoMenuProfesor"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:title="@string/textoMenu"
+        app:menu="@menu/menu_principal_superior"/>
+
+    <fragment
+        android:id="@+id/fragmentos"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/encabezadoMenuProfesor"
+        android:layout_above="@id/barraInferior"
+        app:navGraph="@navigation/menu_principal_navigation"/>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/barraInferior"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        style="?attr/bottomNavigationStyle"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/menu_principal_inferior"/>
+
+</RelativeLayout>

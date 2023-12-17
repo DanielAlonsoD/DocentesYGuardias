@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="cyan_danube">#599ED6</color>
+    <color name="cyan_azure">#3361ad</color>
+    <color name="cyan_st_tropaz">#22529F</color>
+    <color name="orange_tree_poppy">#F89821</color>
+    <color name="blue_mirage">#111127</color>
+    <color name="green_mantis">#67CD6B</color>
+    <color name="cyan_cello">#1C3F60</color>
+</resources>

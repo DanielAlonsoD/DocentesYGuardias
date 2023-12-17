@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">DocentesYGuardias</string>
+
+    <!--Texto al entrar en la aplicación-->
+    <string name="textoBienvenida">Docentes\ny\nGuardias</string>
+
+    <!--Texto de encabezados-->
+    <string name="textoInicioDeSesion">Inicio de Sesión</string>
+    <string name="textoRegistro">Registro</string>
+    <string name="textoMenu">Menú</string>
+
+    <!--Texto utilizado varias veces-->
+    <string name="textoIniciarSesion">Iniciar Sesión</string>
+    <string name="textoRegistrarse">Registrarse</string>
+    <string name="textoPerfil">Perfil</string>
+    <string name="textoMensajes">Mensajes</string>
+    
+    <!--Botones-->
+    <string name="textoGestionarPermisos">GestionarPermisos</string>
+    <string name="textoTareasAdministrativas">Tareas Administrativas</string>
+    <string name="textoNotificarAusencias">Notificar Ausencias</string>
+    <string name="textoFijarTareas">Fijar Tareas</string>
+    <string name="textoAsignarGuardias">Asignar Guardias</string>
+    <string name="textoElaborarInformes">Elaborar Informes</string>
+
+    <!--Hints-->
+    <string name="textoDNI">DNI</string>
+    <string name="textoNombre">Nombre</string>
+    <string name="textoCorreo">Correo</string>
+    <string name="textoTitulacion">Titulación</string>
+    <string name="textoContrasena">Contraseña</string>
+    <string name="textoConfirmarContrasena">Confirmar Contraseña</string>
+
+    <!--Texto de errores-->
+    <string name="textoFalloInsertarDatosInicioSesion">El correo o la contraseña son incorrectos</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
