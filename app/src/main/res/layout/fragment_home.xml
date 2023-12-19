@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
+    android:id="@+id/layoutHomeFragment"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -15,7 +16,8 @@
         android:layout_marginTop="15dp"
         android:layout_marginRight="30dp"
         android:layout_marginLeft="30dp"
-        android:text="@string/textoGestionarPermisos"/>
+        android:text="@string/textoGestionarPermisos"
+        android:visibility="visible"/>
 
     <Button
         android:id="@+id/botonTareasAdministrativas"
@@ -25,7 +27,8 @@
         android:layout_marginTop="15dp"
         android:layout_marginRight="30dp"
         android:layout_marginLeft="30dp"
-        android:text="@string/textoTareasAdministrativas"/>
+        android:text="@string/textoTareasAdministrativas"
+        android:visibility="visible"/>
 
     <Button
         android:id="@+id/botonNotificarAusencias"
@@ -35,7 +38,8 @@
         android:layout_marginTop="15dp"
         android:layout_marginRight="30dp"
         android:layout_marginLeft="30dp"
-        android:text="@string/textoNotificarAusencias"/>
+        android:text="@string/textoNotificarAusencias"
+        android:visibility="visible"/>
 
     <Button
         android:id="@+id/botonFijarTareas"
@@ -45,7 +49,9 @@
         android:layout_marginTop="15dp"
         android:layout_marginRight="30dp"
         android:layout_marginLeft="30dp"
-        android:text="@string/textoFijarTareas"/>
+        android:text="@string/textoFijarTareas"
+        android:visibility="visible"/>
+
     <Button
         android:id="@+id/botonAsignarGuardias"
         style="?attr/buttonStyle"
@@ -54,7 +60,9 @@
         android:layout_marginTop="15dp"
         android:layout_marginRight="30dp"
         android:layout_marginLeft="30dp"
-        android:text="@string/textoAsignarGuardias"/>
+        android:text="@string/textoAsignarGuardias"
+        android:visibility="visible"/>
+
     <Button
         android:id="@+id/botonElaboracionInformes"
         style="?attr/buttonStyle"
@@ -63,6 +71,7 @@
         android:layout_marginTop="15dp"
         android:layout_marginRight="30dp"
         android:layout_marginLeft="30dp"
-        android:text="@string/textoElaborarInformes"/>
+        android:text="@string/textoElaborarInformes"
+        android:visibility="visible"/>
 
 </LinearLayout>
