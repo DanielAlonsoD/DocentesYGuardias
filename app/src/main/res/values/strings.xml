@@ -16,7 +16,7 @@
     <string name="textoMensajes">Mensajes</string>
     
     <!--Botones-->
-    <string name="textoGestionarPermisos">GestionarPermisos</string>
+    <string name="textoGestionarPermisos">Gestionar Permisos</string>
     <string name="textoTareasAdministrativas">Tareas Administrativas</string>
     <string name="textoNotificarAusencias">Notificar Ausencias</string>
     <string name="textoFijarTareas">Fijar Tareas</string>

@@ -42,9 +42,10 @@
         <item name="cursorColor">@color/black</item>
     </style>
 
-    <style name="BottomNavigation" parent="Widget.MaterialComponents.BottomNavigationView.Colored">
+    <style name="BottomNavigation" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
         <item name="itemIconSize">45dp</item>
         <item name="backgroundTint">@color/cyan_azure</item>
+        <item name="shapeAppearance">@style/Widget.Material3.BottomNavigationView</item>
     </style>
 
 </resources>

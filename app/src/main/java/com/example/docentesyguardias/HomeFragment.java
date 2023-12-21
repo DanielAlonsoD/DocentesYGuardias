@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,7 +38,6 @@ public class HomeFragment extends Fragment {
         Button botonElaboracionInformes = view.findViewById(R.id.botonElaboracionInformes);
 
         if (usuario.isEmpty()) {
-
         } else if (usuario.getString("TipoProfesor").equals("Jefe De Estudios")) {
             botonGestionarPermisos.setVisibility(View.GONE);
             botonTareasAdministrativas.setVisibility(View.GONE);

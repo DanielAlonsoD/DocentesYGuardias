@@ -68,7 +68,8 @@ public class InicioSesionActivity extends AppCompatActivity implements View.OnCl
             for (Bundle usuario:usuarios) {
                 if (usuario.getString("Correo").equals(correo) && usuario.getString("Contrasena").equals(contrasena)) {
                     Intent actividadMenuPrincipal = new Intent(this, MenuPrincipalActivity.class);
-                    startActivity(actividadMenuPrincipal, usuario);
+                    actividadMenuPrincipal.putExtras(usuario);
+                    startActivity(actividadMenuPrincipal);
                     realizado = true;
                 }
             }

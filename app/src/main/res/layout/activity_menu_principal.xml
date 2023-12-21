@@ -28,7 +28,6 @@
         android:id="@+id/barraInferiorMenuProfesor"
         android:layout_width="match_parent"
         android:layout_height="65dp"
-        style="?attr/bottomNavigationStyle"
         android:layout_alignParentBottom="true"
         app:menu="@menu/menu_principal_inferior"/>
 
