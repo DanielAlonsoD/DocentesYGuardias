@@ -8,45 +8,24 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.snackbar.Snackbar;
 
+import Tablas.Profesor;
+
 public class InicioSesionActivity extends AppCompatActivity implements View.OnClickListener {
-    Bundle usuario1;
-    Bundle usuario2;
-    Bundle usuario3;
-    EditText textoCorreo;
-    EditText textoContrasena;
+    private Profesor profesorPrueba1 = new Profesor("78945367G", "Pepe", "pepe.sangor@sanviatorvalladolid.com", "Docente", "Técnico Informático", "123456");
+    private Profesor profesorPrueba2 = new Profesor("78269292Q", "Pepa", "pepa.margar@sanviatorvalladolid.com", "Coordinador", "Ciencias Sociales", "123456");
+    private Profesor profesorPrueba3 = new Profesor("79967541T", "Pedro", "pedro.sanmar@sanviatorvalladolid.com", "Jefe De Estudios", "Administración Pública", "123456");
+    private EditText textoCorreo;
+    private EditText textoContrasena;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio_sesion);
-
-        usuario1 = new Bundle();
-        usuario1.putString("DNI", "78945367G");
-        usuario1.putString("Nombre", "Pepe");
-        usuario1.putString("Correo", "pepe.sangor@sanviatorvalladolid.com");
-        usuario1.putString("TipoProfesor", "Docente");
-        usuario1.putString("Titulacion", "Graduado en Tecnologías de la Información");
-        usuario1.putString("Contrasena", "123456");
-
-        usuario2 = new Bundle();
-        usuario2.putString("DNI", "78269292Q");
-        usuario2.putString("Nombre", "Pepa");
-        usuario2.putString("Correo", "pepa.margar@sanviatorvalladolid.com");
-        usuario2.putString("TipoProfesor", "Coordinador");
-        usuario2.putString("Titulacion", "Graduado en Ciencias Sociales");
-        usuario2.putString("Contrasena", "123456");
-
-        usuario3 = new Bundle();
-        usuario3.putString("DNI", "79967541T");
-        usuario3.putString("Nombre", "Pedro");
-        usuario3.putString("Correo", "pedro.sanmar@sanviatorvalladolid.com");
-        usuario3.putString("TipoProfesor", "Jefe De Estudios");
-        usuario3.putString("Titulacion", "Graduado en Administración Pública");
-        usuario3.putString("Contrasena", "123456");
 
         MaterialToolbar encabezado = findViewById(R.id.encabezadoInicioSesión);
         textoCorreo = findViewById(R.id.textoInsertarCorreoInicioSesion);
@@ -60,25 +39,31 @@ public class InicioSesionActivity extends AppCompatActivity implements View.OnCl
     @Override
     public void onClick(View view) {
         if (view.getId() == R.id.botonIniciarSesionInicioSesion) {
-            Bundle[] usuarios = {usuario1, usuario2, usuario3};
             String correo = textoCorreo.getText().toString();
             String contrasena = textoContrasena.getText().toString();
-            boolean realizado = false;
 
-            for (Bundle usuario:usuarios) {
-                if (usuario.getString("Correo").equals(correo) && usuario.getString("Contrasena").equals(contrasena)) {
-                    Intent actividadMenuPrincipal = new Intent(this, MenuPrincipalActivity.class);
-                    actividadMenuPrincipal.putExtras(usuario);
-                    startActivity(actividadMenuPrincipal);
-                    realizado = true;
+            if (correo.isEmpty() || contrasena.isEmpty()) {
+                Toast.makeText(this, R.string.errorTextosVacíos, Toast.LENGTH_SHORT).show();
+            } else {
+                Profesor[] profesoresInicio = {profesorPrueba1, profesorPrueba2, profesorPrueba3};
+                boolean realizado = false;
+
+                for (Profesor profesor:profesoresInicio) {
+                    if (profesor.getCorreo().equals(correo) && profesor.getContrasena().equals(contrasena)) {
+                        Bundle usuario = new Bundle();
+                        usuario.putParcelable("profesor", profesor);
+                        Intent actividadMenuPrincipal = new Intent(this, MenuPrincipalActivity.class);
+                        actividadMenuPrincipal.putExtras(usuario);
+                        startActivity(actividadMenuPrincipal);
+                        realizado = true;
+                    }
+                }
+
+                if (!realizado) {
+                    Toast.makeText(this, R.string.textoFalloInsertarDatosInicioSesion, Toast.LENGTH_SHORT).show();
                 }
             }
 
-            if (!realizado) {
-                LinearLayout linearPadre = (LinearLayout) findViewById(R.id.layoutInicioSesion);
-                Snackbar mensajeFallo = Snackbar.make(linearPadre, R.string.textoFalloInsertarDatosInicioSesion, Snackbar.LENGTH_SHORT);
-                mensajeFallo.show();
-            }
         } else {
             Intent actividadMain = new Intent(this, MainActivity.class);
             startActivity(actividadMain);

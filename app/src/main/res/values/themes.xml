@@ -15,6 +15,7 @@
         <item name="iconTint">@color/white</item>
         <item name="android:buttonStyle">@style/Buttons</item>
         <item name="floatingActionButtonStyle">@style/FloatingButton</item>
+        <item name="extendedFloatingActionButtonStyle">@style/ExtendedFloatingButton</item>
         <item name="textInputStyle">@style/TextInputs</item>
         <item name="android:textViewStyle">@style/TextView</item>
         <item name="bottomNavigationStyle">@style/BottomNavigation</item>
@@ -33,6 +34,12 @@
     </style>
 
     <style name="FloatingButton" parent="Widget.Design.FloatingActionButton">
+        <item name="android:backgroundTint">@color/cyan_azure</item>
+        <item name="android:tint">@color/white</item>
+        <item name="borderWidth">0dp</item>
+    </style>
+
+    <style name="ExtendedFloatingButton" parent="Widget.MaterialComponents.ExtendedFloatingActionButton">
         <item name="android:backgroundTint">@color/cyan_azure</item>
         <item name="android:tint">@color/white</item>
         <item name="borderWidth">0dp</item>

@@ -13,11 +13,12 @@
         <item name="android:windowBackground">@color/blue_mirage</item>
         <item name="toolbarStyle">@style/TopAppBar.Dark</item>
         <item name="iconTint">@color/black</item>
+        <item name="buttonStyle">@style/Buttons.Dark</item>
+        <item name="floatingActionButtonStyle">@style/FloatingButton.Dark</item>
+        <item name="extendedFloatingActionButtonStyle">@style/ExtendedFloatingButton.Dark</item>
         <item name="textInputStyle">@style/TextInputs.Dark</item>
         <item name="android:textViewStyle">@style/TextView.Dark</item>
-        <item name="buttonStyle">@style/Buttons.Dark</item>
         <item name="bottomNavigationStyle">@style/BottomNavigation.Dark</item>
-        <item name="floatingActionButtonStyle">@style/FloatingButton.Dark</item>
     </style>
 
     <style name="TopAppBar.Dark" parent="TopAppBar">
@@ -35,6 +36,13 @@
     <style name="FloatingButton.Dark" parent="FloatingButton">
         <item name="android:backgroundTint">@color/green_mantis</item>
         <item name="android:tint">@color/blue_mirage</item>
+        <item name="android:outlineSpotShadowColor" tools:targetApi="p">@color/white</item>
+    </style>
+
+    <style name="ExtendedFloatingButton.Dark" parent="ExtendedFloatingButton">
+        <item name="android:backgroundTint">@color/green_mantis</item>
+        <item name="android:tint">@color/blue_mirage</item>
+        <item name="android:outlineSpotShadowColor" tools:targetApi="p">@color/white</item>
     </style>
 
     <style name="TextInputs.Dark" parent="TextInputs">

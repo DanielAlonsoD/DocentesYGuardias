@@ -6,6 +6,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -38,6 +39,14 @@ public class MenuPrincipalActivity extends AppCompatActivity implements Toolbar.
     @Override
     public boolean onMenuItemClick(MenuItem item) {
         boolean realizado = false;
+        if (item.getItemId() == R.id.itemMensajes) {
+            realizado = true;
+        } else if (item.getItemId() == R.id.itemPerfil) {
+            realizado = true;
+            Intent actividadPerfil = new Intent(MenuPrincipalActivity.this, PerfilActivity.class);
+            actividadPerfil.putExtras(usuario);
+            startActivity(actividadPerfil);
+        }
         return realizado;
     }
 

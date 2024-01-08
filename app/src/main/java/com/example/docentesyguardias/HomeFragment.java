@@ -10,8 +10,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import Tablas.Profesor;
+
 public class HomeFragment extends Fragment {
-    Bundle usuario = new Bundle();
+    private Bundle usuario = new Bundle();
+    private Profesor profesor;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -22,6 +25,7 @@ public class HomeFragment extends Fragment {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             usuario = getArguments();
+            profesor = usuario.getParcelable("profesor");
         }
     }
 
@@ -38,7 +42,7 @@ public class HomeFragment extends Fragment {
         Button botonElaboracionInformes = view.findViewById(R.id.botonElaboracionInformes);
 
         if (usuario.isEmpty()) {
-        } else if (usuario.getString("TipoProfesor").equals("Jefe De Estudios")) {
+        } else if (profesor.getTipoProfesor().equals("Jefe De Estudios")) {
             botonGestionarPermisos.setVisibility(View.GONE);
             botonTareasAdministrativas.setVisibility(View.GONE);
             botonNotificarAusencias.setVisibility(View.GONE);
