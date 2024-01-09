@@ -13,6 +13,9 @@ public class Profesor implements Parcelable {
     private String titulacion;
     private String contrasena;
 
+    public Profesor() {
+    }
+
     public Profesor(String dNI, String nombre, String correo, String tipoProfesor, String titulacion, String contrasena) {
         this.dNI = dNI;
         this.nombre = nombre;

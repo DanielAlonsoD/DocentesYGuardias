@@ -9,6 +9,7 @@
     <string name="textoRegistro">Registro</string>
     <string name="textoMenu">Menú</string>
     <string name="textoEditarPerfil">Editar Perfil</string>
+    <string name="textoCambiarContrasena">Cambiar Contraseña</string>
 
     <!--Texto utilizado varias veces-->
     <string name="textoIniciarSesion">Iniciar Sesión</string>
@@ -31,10 +32,13 @@
     <string name="textoTipoDeProfesor">Tipo de Profesor</string>
     <string name="textoTitulacion">Titulación</string>
     <string name="textoContrasena">Contraseña</string>
+    <string name="textoNuevaContrasena">Nueva Contraseña</string>
     <string name="textoConfirmarContrasena">Confirmar Contraseña</string>
 
     <!--Texto de errores-->
-    <string name="textoFalloInsertarDatosInicioSesion">El correo o la contraseña son incorrectos</string>
+    <string name="errorInsertarDatosInicioSesion">El correo o la contraseña son incorrectos</string>
+    <string name="errorTipoProfesorNoInsertado">Debes elegir una profesión antes</string>
+    <string name="errorContrasenaYConfirmación">Tu contrtaseña y su confirmación no son iguales</string>
     <string name="errorTextosVacíos">Debes rellenar todos los textos</string>
 
     <!-- TODO: Remove or change this placeholder text -->

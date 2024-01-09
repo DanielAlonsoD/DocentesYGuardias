@@ -7,11 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.google.android.material.appbar.MaterialToolbar;
-import com.google.android.material.snackbar.Snackbar;
 
 import Tablas.Profesor;
 
@@ -60,7 +58,7 @@ public class InicioSesionActivity extends AppCompatActivity implements View.OnCl
                 }
 
                 if (!realizado) {
-                    Toast.makeText(this, R.string.textoFalloInsertarDatosInicioSesion, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, R.string.errorInsertarDatosInicioSesion, Toast.LENGTH_SHORT).show();
                 }
             }
 

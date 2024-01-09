@@ -19,8 +19,8 @@
             style="?attr/buttonStyle"
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginLeft="30dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
             android:text="@string/textoGestionarPermisos"
             android:textSize="18sp"/>
 
@@ -30,8 +30,8 @@
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:layout_marginTop="15dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginLeft="30dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
             android:text="@string/textoTareasAdministrativas"
             android:textSize="18sp"/>
 
@@ -41,8 +41,8 @@
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:layout_marginTop="15dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginLeft="30dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
             android:text="@string/textoNotificarAusencias"
             android:textSize="18sp"/>
 
@@ -52,8 +52,8 @@
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:layout_marginTop="15dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginLeft="30dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
             android:text="@string/textoFijarTareas"
             android:textSize="18sp"/>
 
@@ -63,8 +63,8 @@
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:layout_marginTop="15dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginLeft="30dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
             android:text="@string/textoAsignarGuardias"
             android:textSize="18sp"/>
 
@@ -74,8 +74,8 @@
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:layout_marginTop="15dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginLeft="30dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
             android:text="@string/textoElaborarInformes"
             android:textSize="18sp"/>
     </LinearLayout>

@@ -129,7 +129,7 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/botonRegistrarse"
         style="?attr/buttonStyle"
         android:layout_width="match_parent"
