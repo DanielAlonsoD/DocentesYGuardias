@@ -47,7 +47,9 @@ public class PerfilActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.botonEditarPerfil) {
-
+            Intent actividadEditarPerfil = new Intent(PerfilActivity.this, EditarPerfilActivity.class);
+            actividadEditarPerfil.putExtras(usuario);
+            startActivity(actividadEditarPerfil);
         } else if (v.getId() == R.id.botonCambiarContrasena) {
 
         } else {

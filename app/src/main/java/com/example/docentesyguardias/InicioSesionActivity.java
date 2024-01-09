@@ -18,7 +18,7 @@ import Tablas.Profesor;
 public class InicioSesionActivity extends AppCompatActivity implements View.OnClickListener {
     private Profesor profesorPrueba1 = new Profesor("78945367G", "Pepe", "pepe.sangor@sanviatorvalladolid.com", "Docente", "Técnico Informático", "123456");
     private Profesor profesorPrueba2 = new Profesor("78269292Q", "Pepa", "pepa.margar@sanviatorvalladolid.com", "Coordinador", "Ciencias Sociales", "123456");
-    private Profesor profesorPrueba3 = new Profesor("79967541T", "Pedro", "pedro.sanmar@sanviatorvalladolid.com", "Jefe De Estudios", "Administración Pública", "123456");
+    private Profesor profesorPrueba3 = new Profesor("79967541T", "Pedro", "pedro.sanmar@sanviatorvalladolid.com", "Jefe de Estudios", "Administración Pública", "123456");
     private EditText textoCorreo;
     private EditText textoContrasena;
 

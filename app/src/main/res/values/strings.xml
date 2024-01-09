@@ -8,6 +8,7 @@
     <string name="textoInicioDeSesion">Inicio de Sesión</string>
     <string name="textoRegistro">Registro</string>
     <string name="textoMenu">Menú</string>
+    <string name="textoEditarPerfil">Editar Perfil</string>
 
     <!--Texto utilizado varias veces-->
     <string name="textoIniciarSesion">Iniciar Sesión</string>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/layoutEditarPerfil"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditarPerfilActivity">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/encabezadoEditarPerfil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        app:title="@string/textoEditarPerfil"
+        app:titleCentered="true"
+        app:navigationIcon="@drawable/arrow_back"/>
+
+    <LinearLayout
+        android:id="@+id/layoutDatosEditarPerfil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/encabezadoEditarPerfil"
+        android:orientation="vertical"
+        android:gravity="center|top">
+
+        <ImageView
+            android:id="@+id/imagenEditarPerfil"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:src="@drawable/account_circle"
+            android:layout_gravity="center"
+            app:tint="@color/white"/>
+
+        <Spinner
+            android:id="@+id/spinnerTipoProfesorEditarPerfil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputDNIEditarPerfil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:hint="@string/textoDNI"
+            app:startIconDrawable="@drawable/badge"
+            app:endIconMode="clear_text">
+
+            <EditText
+                android:id="@+id/textoInsertarDNIEditarPerfil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputNombreEditarPerfil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:hint="@string/textoNombre"
+            app:startIconDrawable="@drawable/person"
+            app:endIconMode="clear_text">
+
+            <EditText
+                android:id="@+id/textoInsertarNombreEditarPerfil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputCorreoEditarPerfil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:hint="@string/textoCorreo"
+            app:startIconDrawable="@drawable/mail"
+            app:endIconMode="clear_text">
+
+            <EditText
+                android:id="@+id/textoInsertarCorreoEditarPerfil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputTitulacionEditarPerfil"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:hint="@string/textoTitulacion"
+            app:endIconMode="clear_text"
+            app:startIconDrawable="@drawable/license">
+
+            <EditText
+                android:id="@+id/textoInsertarTitulacionEditarPerfil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/botonRealizadoEditarPerfil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/check"
+        app:maxImageSize="30dp"/>
+
+</RelativeLayout>

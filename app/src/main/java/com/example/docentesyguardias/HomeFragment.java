@@ -42,7 +42,7 @@ public class HomeFragment extends Fragment {
         Button botonElaboracionInformes = view.findViewById(R.id.botonElaboracionInformes);
 
         if (usuario.isEmpty()) {
-        } else if (profesor.getTipoProfesor().equals("Jefe De Estudios")) {
+        } else if (profesor.getTipoProfesor().equals("Jefe de Estudios")) {
             botonGestionarPermisos.setVisibility(View.GONE);
             botonTareasAdministrativas.setVisibility(View.GONE);
             botonNotificarAusencias.setVisibility(View.GONE);
