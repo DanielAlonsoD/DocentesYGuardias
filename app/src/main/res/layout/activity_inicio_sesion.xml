@@ -54,7 +54,7 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/botonIniciarSesionInicioSesion"
         style="?attr/buttonStyle"
         android:layout_width="match_parent"

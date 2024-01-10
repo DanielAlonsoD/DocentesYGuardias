@@ -5,7 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
+
+import com.google.android.material.button.MaterialButton;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -14,8 +15,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button botonIniciarSesion = findViewById(R.id.botonIniciarSesionMain);
-        Button botonRegistrarse = findViewById(R.id.botonRegistrarseMain);
+        MaterialButton botonIniciarSesion = findViewById(R.id.botonIniciarSesionMain);
+        MaterialButton botonRegistrarse = findViewById(R.id.botonRegistrarseMain);
 
         botonIniciarSesion.setOnClickListener(this);
         botonRegistrarse.setOnClickListener(this);

@@ -5,11 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
+import android.widget.LinearLayout;
 
 import com.google.android.material.appbar.MaterialToolbar;
+import com.google.android.material.button.MaterialButton;
 import com.google.android.material.snackbar.Snackbar;
 
 import Tablas.Profesor;
@@ -29,7 +29,7 @@ public class InicioSesionActivity extends AppCompatActivity implements View.OnCl
         MaterialToolbar encabezado = findViewById(R.id.encabezadoInicioSesión);
         textoCorreo = findViewById(R.id.textoInsertarCorreoInicioSesion);
         textoContrasena = findViewById(R.id.textoInsertarContrasenaInicioSesion);
-        Button botonInicioSesion = findViewById(R.id.botonIniciarSesionInicioSesion);
+        MaterialButton botonInicioSesion = findViewById(R.id.botonIniciarSesionInicioSesion);
 
         encabezado.setNavigationOnClickListener(this);
         botonInicioSesion.setOnClickListener(this);
@@ -38,11 +38,13 @@ public class InicioSesionActivity extends AppCompatActivity implements View.OnCl
     @Override
     public void onClick(View view) {
         if (view.getId() == R.id.botonIniciarSesionInicioSesion) {
+            LinearLayout layout = findViewById(R.id.layoutInicioSesion);
+
             String correo = textoCorreo.getText().toString();
             String contrasena = textoContrasena.getText().toString();
 
             if (correo.isEmpty() || contrasena.isEmpty()) {
-                Toast.makeText(this, R.string.errorTextosVacíos, Toast.LENGTH_SHORT).show();
+                Snackbar.make(layout, R.string.errorTextosVacíos, Snackbar.LENGTH_SHORT).show();
             } else {
                 Profesor[] profesoresInicio = {profesorPrueba1, profesorPrueba2, profesorPrueba3};
                 boolean realizado = false;
@@ -59,7 +61,7 @@ public class InicioSesionActivity extends AppCompatActivity implements View.OnCl
                 }
 
                 if (!realizado) {
-                    Toast.makeText(this, R.string.errorInsertarDatosInicioSesion, Toast.LENGTH_SHORT).show();
+                    Snackbar.make(layout, R.string.errorInsertarDatosInicioSesion, Snackbar.LENGTH_SHORT).show();
                 }
             }
 

@@ -51,7 +51,9 @@ public class PerfilActivity extends AppCompatActivity implements View.OnClickLis
             actividadEditarPerfil.putExtras(usuario);
             startActivity(actividadEditarPerfil);
         } else if (v.getId() == R.id.botonCambiarContrasena) {
-
+            Intent actividadCambiarContrasena = new Intent(PerfilActivity.this, CambiarContrasenaActivity.class);
+            actividadCambiarContrasena.putExtras(usuario);
+            startActivity(actividadCambiarContrasena);
         } else {
             Intent actividadMenuPrincipal = new Intent(PerfilActivity.this, MenuPrincipalActivity.class);
             actividadMenuPrincipal.putExtras(usuario);

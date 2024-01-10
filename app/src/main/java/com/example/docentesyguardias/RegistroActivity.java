@@ -7,13 +7,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.snackbar.Snackbar;
 
 import Tablas.Profesor;
 
@@ -51,6 +51,7 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
 
     @Override
     public void onClick(View v) {
+        LinearLayout layout = findViewById(R.id.layoutRegistro);
         if (v.getId() == R.id.botonRegistrarse) {
             String dni = textoDNI.getText().toString();
             String nombre = textoNombre.getText().toString();
@@ -59,9 +60,9 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
             String contrasena = textoContrasena.getText().toString();
             String confirmarContrasena = textoConfirmarContrasena.getText().toString();
             if (dni.isEmpty() || nombre.isEmpty() || correo.isEmpty() || titulacion.isEmpty() || contrasena.isEmpty() || confirmarContrasena.isEmpty()) {
-                Toast.makeText(this, R.string.errorTextosVacíos, Toast.LENGTH_SHORT).show();
+                Snackbar.make(layout, R.string.errorTextosVacíos, Snackbar.LENGTH_SHORT).show();
             } else if (profesor.getTipoProfesor().equals("Selecciona uno")) {
-                Toast.makeText(this, R.string.errorTipoProfesorNoInsertado, Toast.LENGTH_SHORT).show();
+                Snackbar.make(layout, R.string.errorTipoProfesorNoInsertado, Snackbar.LENGTH_SHORT).show();
             } else if (contrasena.equals(confirmarContrasena)) {
                 profesor.setdNI(dni);
                 profesor.setNombre(nombre);
@@ -74,7 +75,7 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
                 actividadMenuPrincipal.putExtras(usuario);
                 startActivity(actividadMenuPrincipal);
             } else {
-                Toast.makeText(this, R.string.errorContrasenaYConfirmacion, Toast.LENGTH_SHORT).show();
+                Snackbar.make(layout, R.string.errorContrasenaYConfirmacion, Snackbar.LENGTH_SHORT).show();
             }
         } else {
             Intent actividadMain = new Intent(RegistroActivity.this, MainActivity.class);

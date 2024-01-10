@@ -4,11 +4,11 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+
+import com.google.android.material.button.MaterialButton;
 
 import Tablas.Profesor;
 
@@ -34,12 +34,12 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        Button botonGestionarPermisos = view.findViewById(R.id.botonGestionarPermisos);
-        Button botonTareasAdministrativas = view.findViewById(R.id.botonTareasAdministrativas);
-        Button botonNotificarAusencias = view.findViewById(R.id.botonNotificarAusencias);
-        Button botonFijarTareas = view.findViewById(R.id.botonFijarTareas);
-        Button botonAsignarGuardias = view.findViewById(R.id.botonAsignarGuardias);
-        Button botonElaboracionInformes = view.findViewById(R.id.botonElaboracionInformes);
+        MaterialButton botonGestionarPermisos = view.findViewById(R.id.botonGestionarPermisos);
+        MaterialButton botonTareasAdministrativas = view.findViewById(R.id.botonTareasAdministrativas);
+        MaterialButton botonNotificarAusencias = view.findViewById(R.id.botonNotificarAusencias);
+        MaterialButton botonFijarTareas = view.findViewById(R.id.botonFijarTareas);
+        MaterialButton botonAsignarGuardias = view.findViewById(R.id.botonAsignarGuardias);
+        MaterialButton botonElaboracionInformes = view.findViewById(R.id.botonElaboracionInformes);
 
         if (usuario.isEmpty()) {
         } else if (profesor.getTipoProfesor().equals("Jefe de Estudios")) {
