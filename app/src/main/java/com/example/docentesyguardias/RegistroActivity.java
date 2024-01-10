@@ -74,7 +74,7 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
                 actividadMenuPrincipal.putExtras(usuario);
                 startActivity(actividadMenuPrincipal);
             } else {
-                Toast.makeText(this, R.string.errorContrasenaYConfirmación, Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.errorContrasenaYConfirmacion, Toast.LENGTH_SHORT).show();
             }
         } else {
             Intent actividadMain = new Intent(RegistroActivity.this, MainActivity.class);

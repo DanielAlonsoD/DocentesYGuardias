@@ -47,14 +47,14 @@ public class CambiarContrasenaActivity extends AppCompatActivity implements View
             if (viejaContrasena.isEmpty() || nuevaContrasena.isEmpty() || confirmarContrasena.isEmpty()) {
                 Toast.makeText(this, R.string.errorTextosVacíos, Toast.LENGTH_SHORT).show();
             } else if (!profesor.getContrasena().equals(viejaContrasena)) {
-                Toast.makeText(this, "", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.errorContrasenaIncorrecta, Toast.LENGTH_SHORT).show();
             } else if (nuevaContrasena.equals(confirmarContrasena)) {
                 profesor.setContrasena(nuevaContrasena);
                 usuario.putParcelable("profesor", profesor);
                 actividadPerfil.putExtras(usuario);
                 startActivity(actividadPerfil);
             } else {
-                Toast.makeText(this, "", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.errorNuevaContrasenaYConfirmacion, Toast.LENGTH_SHORT).show();
             }
         } else {
             actividadPerfil.putExtras(usuario);

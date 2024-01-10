@@ -38,7 +38,9 @@
     <!--Texto de errores-->
     <string name="errorInsertarDatosInicioSesion">El correo o la contraseña son incorrectos</string>
     <string name="errorTipoProfesorNoInsertado">Debes elegir una profesión antes</string>
-    <string name="errorContrasenaYConfirmación">Tu contrtaseña y su confirmación no son iguales</string>
+    <string name="errorContrasenaYConfirmacion">Tu contraseña y su confirmación no son iguales</string>
+    <string name="errorContrasenaIncorrecta">La contraseña es incorrecta</string>
+    <string name="errorNuevaContrasenaYConfirmacion">Tu nueva contraseña y su confirmación no son iguales</string>
     <string name="errorTextosVacíos">Debes rellenar todos los textos</string>
 
     <!-- TODO: Remove or change this placeholder text -->
