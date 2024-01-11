@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/layoutElementoMensaje"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/imagenElementoMensaje"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/account_circle"
+        app:tint="@color/white"/>
+
+    <LinearLayout
+        android:id="@+id/layoutDatosElementoMensaje"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/imagenElementoMensaje"
+        android:layout_toLeftOf="@id/textoFechaElementoMensaje"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textoEmisorElementoMensaje"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/textoNombre"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/textoTituloElementoMensaje"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/textoTitulo"
+            android:textSize="15sp"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textoFechaElementoMensaje"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/textoFechaNumero"
+        android:textSize="20sp" />
+
+</RelativeLayout>

@@ -1,19 +1,21 @@
 package Tablas;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 public class Mensaje {
     private int id;
     private String dniProfesorEmisor;
     private String dniProfesorReceptor;
-    private LocalDateTime fechaHora;
+    private String titulo;
+    private LocalDate fecha;
     private String mensaje;
 
-    public Mensaje(int id, String dniProfesorEmisor, String dniProfesorReceptor, LocalDateTime fechaHora, String mensaje) {
+    public Mensaje(int id, String dniProfesorEmisor, String dniProfesorReceptor, String titulo, LocalDate fecha, String mensaje) {
         this.id = id;
         this.dniProfesorEmisor = dniProfesorEmisor;
         this.dniProfesorReceptor = dniProfesorReceptor;
-        this.fechaHora = fechaHora;
+        this.titulo = titulo;
+        this.fecha = fecha;
         this.mensaje = mensaje;
     }
 
@@ -41,12 +43,20 @@ public class Mensaje {
         this.dniProfesorReceptor = dniProfesorReceptor;
     }
 
-    public LocalDateTime getFechaHora() {
-        return fechaHora;
+    public String getTitulo() {
+        return titulo;
     }
 
-    public void setFechaHora(LocalDateTime fechaHora) {
-        this.fechaHora = fechaHora;
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public LocalDate getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(LocalDate fecha) {
+        this.fecha = fecha;
     }
 
     public String getMensaje() {

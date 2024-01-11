@@ -11,7 +11,7 @@
     <string name="textoEditarPerfil">Editar Perfil</string>
     <string name="textoCambiarContrasena">Cambiar Contraseña</string>
 
-    <!--Texto utilizado varias veces-->
+    <!--Texto utilizado en diferentes elementos-->
     <string name="textoIniciarSesion">Iniciar Sesión</string>
     <string name="textoRegistrarse">Registrarse</string>
     <string name="textoPerfil">Perfil</string>
@@ -34,6 +34,8 @@
     <string name="textoContrasena">Contraseña</string>
     <string name="textoNuevaContrasena">Nueva Contraseña</string>
     <string name="textoConfirmarContrasena">Confirmar Contraseña</string>
+    <string name="textoTitulo">Título</string>
+    <string name="textoFechaNumero">00/00/0000</string>
 
     <!--Texto de errores-->
     <string name="errorInsertarDatosInicioSesion">El correo o la contraseña son incorrectos</string>
