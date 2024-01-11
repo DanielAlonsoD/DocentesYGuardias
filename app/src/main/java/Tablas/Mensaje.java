@@ -2,14 +2,14 @@ package Tablas;
 
 import java.time.LocalDateTime;
 
-public class Aviso {
+public class Mensaje {
     private int id;
     private String dniProfesorEmisor;
     private String dniProfesorReceptor;
     private LocalDateTime fechaHora;
     private String mensaje;
 
-    public Aviso(int id, String dniProfesorEmisor, String dniProfesorReceptor, LocalDateTime fechaHora, String mensaje) {
+    public Mensaje(int id, String dniProfesorEmisor, String dniProfesorReceptor, LocalDateTime fechaHora, String mensaje) {
         this.id = id;
         this.dniProfesorEmisor = dniProfesorEmisor;
         this.dniProfesorReceptor = dniProfesorReceptor;
