@@ -8,17 +8,19 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 
 import Tablas.Profesor;
 
 public class EditarPerfilActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
     private Bundle usuario;
     private Profesor profesor;
+    private String tipoProfesor;
     private EditText textoDNI;
     private EditText textoNombre;
     private EditText textoCorreo;
@@ -73,11 +75,15 @@ public class EditarPerfilActivity extends AppCompatActivity implements View.OnCl
             String correo = textoCorreo.getText().toString();
             String titulacion = textoTitulacion.getText().toString();
             if (dni.isEmpty() || nombre.isEmpty() || correo.isEmpty() || titulacion.isEmpty()) {
-                Toast.makeText(this, R.string.errorTextosVacíos, Toast.LENGTH_SHORT).show();
+                RelativeLayout layout = findViewById(R.id.layoutEditarPerfil);
+                Snackbar.make(layout, R.string.errorTextosVacíos, Snackbar.LENGTH_SHORT).show();
             } else {
                 profesor.setdNI(dni);
                 profesor.setNombre(nombre);
                 profesor.setCorreo(correo);
+                if (!tipoProfesor.isEmpty()) {
+                    profesor.setTipoProfesor(tipoProfesor);
+                }
                 profesor.setTitulacion(titulacion);
                 usuario.putParcelable("profesor", profesor);
                 actividadPerfil.putExtras(usuario);
@@ -91,7 +97,7 @@ public class EditarPerfilActivity extends AppCompatActivity implements View.OnCl
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        profesor.setTipoProfesor(parent.getItemAtPosition(position).toString());
+        tipoProfesor = parent.getItemAtPosition(position).toString();
     }
 
     @Override

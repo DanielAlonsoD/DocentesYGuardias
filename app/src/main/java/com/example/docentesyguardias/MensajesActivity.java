@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ListView;
 
@@ -40,10 +41,10 @@ public class MensajesActivity extends AppCompatActivity implements View.OnClickL
         }
 
         mensajes = new ArrayList<>();
-        mensajes.add(new Mensaje(1, "712", "1", "Hola", LocalDate.now(), "sadgasdgkjasdga"));
+        mensajes.add(new Mensaje(1, "712", "1", "Hola", LocalDate.now()));
         AdaptadorMensajes adaptador = new AdaptadorMensajes(this, mensajes);
         listaMensajes.setAdapter(adaptador);
-
+        Log.i("mensajeError", mensajes.size()+"");
         encabezado.setNavigationOnClickListener(this);
         botonCrear.setOnClickListener(this);
     }

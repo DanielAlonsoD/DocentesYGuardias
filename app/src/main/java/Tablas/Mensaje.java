@@ -6,17 +6,15 @@ public class Mensaje {
     private int id;
     private String dniProfesorEmisor;
     private String dniProfesorReceptor;
-    private String titulo;
-    private LocalDate fecha;
     private String mensaje;
+    private LocalDate fecha;
 
-    public Mensaje(int id, String dniProfesorEmisor, String dniProfesorReceptor, String titulo, LocalDate fecha, String mensaje) {
+    public Mensaje(int id, String dniProfesorEmisor, String dniProfesorReceptor, String mensaje, LocalDate fecha) {
         this.id = id;
         this.dniProfesorEmisor = dniProfesorEmisor;
         this.dniProfesorReceptor = dniProfesorReceptor;
-        this.titulo = titulo;
-        this.fecha = fecha;
         this.mensaje = mensaje;
+        this.fecha = fecha;
     }
 
     public int getId() {
@@ -43,12 +41,12 @@ public class Mensaje {
         this.dniProfesorReceptor = dniProfesorReceptor;
     }
 
-    public String getTitulo() {
-        return titulo;
+    public String getMensaje() {
+        return mensaje;
     }
 
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
+    public void setMensaje(String mensaje) {
+        this.mensaje = mensaje;
     }
 
     public LocalDate getFecha() {
@@ -57,13 +55,5 @@ public class Mensaje {
 
     public void setFecha(LocalDate fecha) {
         this.fecha = fecha;
-    }
-
-    public String getMensaje() {
-        return mensaje;
-    }
-
-    public void setMensaje(String mensaje) {
-        this.mensaje = mensaje;
     }
 }

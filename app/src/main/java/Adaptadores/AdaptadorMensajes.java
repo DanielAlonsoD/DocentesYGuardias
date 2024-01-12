@@ -17,7 +17,6 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 import Tablas.Mensaje;
-import Tablas.Profesor;
 
 public class AdaptadorMensajes extends ArrayAdapter<Mensaje> {
     private ArrayList<Mensaje> mensajes;
@@ -36,14 +35,14 @@ public class AdaptadorMensajes extends ArrayAdapter<Mensaje> {
         View elemento = mostrado.inflate(R.layout.elemento_mensaje_lista, parent, false);
 
         TextView textoEmisor = elemento.findViewById(R.id.textoEmisorElementoMensaje);
-        TextView textoTitulo = elemento.findViewById(R.id.textoTituloElementoMensaje);
+        TextView textoTitulo = elemento.findViewById(R.id.textoMensajeElementoMensaje);
         TextView textoFecha = elemento.findViewById(R.id.textoFechaElementoMensaje);
 
         textoEmisor.setText(mensajes.get(position).getDniProfesorEmisor());
-        textoTitulo.setText(mensajes.get(position).getTitulo());
+        textoTitulo.setText(mensajes.get(position).getMensaje());
         LocalDate fecha = mensajes.get(position).getFecha();
         textoFecha.setText(fecha.getDayOfMonth()+"/"+fecha.getMonthValue()+"/"+fecha.getYear());
 
-        return super.getView(position, convertView, parent);
+        return elemento;
     }
 }

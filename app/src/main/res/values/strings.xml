@@ -34,7 +34,7 @@
     <string name="textoContrasena">Contraseña</string>
     <string name="textoNuevaContrasena">Nueva Contraseña</string>
     <string name="textoConfirmarContrasena">Confirmar Contraseña</string>
-    <string name="textoTitulo">Título</string>
+    <string name="textoMensaje">Mensaje</string>
     <string name="textoFechaNumero">00/00/0000</string>
 
     <!--Texto de errores-->
