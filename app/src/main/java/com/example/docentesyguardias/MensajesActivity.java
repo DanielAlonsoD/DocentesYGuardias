@@ -21,7 +21,7 @@ import Tablas.Profesor;
 
 public class MensajesActivity extends AppCompatActivity implements View.OnClickListener {
     private Bundle usuario;
-    ArrayList<Mensaje> mensajes;
+    private ArrayList<Mensaje> mensajes;
 
     @SuppressLint("NewApi")
     @Override
@@ -41,7 +41,8 @@ public class MensajesActivity extends AppCompatActivity implements View.OnClickL
         }
 
         mensajes = new ArrayList<>();
-        mensajes.add(new Mensaje(1, "712", "1", "Hola", LocalDate.now()));
+        Mensaje m1 = new Mensaje(1, "712", "1", "Hola", LocalDate.now());
+        mensajes.add(m1);
         AdaptadorMensajes adaptador = new AdaptadorMensajes(this, mensajes);
         listaMensajes.setAdapter(adaptador);
         Log.i("mensajeError", mensajes.size()+"");

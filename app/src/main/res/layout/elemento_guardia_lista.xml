@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+    android:id="@+id/layoutElementoGuardia"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/imagenElementoGuardia"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/account_circle"
+        app:tint="@color/white"/>
+    
+    <LinearLayout
+        android:id="@+id/layoutDatosElementoGuardia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textoAusenteElementoGuardia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/textoNombre"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/textoFechaHoraElementoGuardia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/textoFechaHoraNumero"
+            android:textSize="15sp"/>
+        
+    </LinearLayout>
+
+</LinearLayout>

@@ -12,11 +12,11 @@ import com.google.android.material.button.MaterialButton;
 
 import Tablas.Profesor;
 
-public class HomeFragment extends Fragment {
+public class InicioFragment extends Fragment {
     private Bundle usuario = new Bundle();
     private Profesor profesor;
 
-    public HomeFragment() {
+    public InicioFragment() {
         // Required empty public constructor
     }
 
@@ -32,7 +32,7 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_home, container, false);
+        View view = inflater.inflate(R.layout.fragment_inicio, container, false);
 
         MaterialButton botonGestionarPermisos = view.findViewById(R.id.botonGestionarPermisos);
         MaterialButton botonTareasAdministrativas = view.findViewById(R.id.botonTareasAdministrativas);

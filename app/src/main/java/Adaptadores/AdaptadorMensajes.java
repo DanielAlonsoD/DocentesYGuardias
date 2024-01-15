@@ -14,6 +14,7 @@ import androidx.annotation.Nullable;
 import com.example.docentesyguardias.R;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 import Tablas.Mensaje;
@@ -32,17 +33,19 @@ public class AdaptadorMensajes extends ArrayAdapter<Mensaje> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         LayoutInflater mostrado = LayoutInflater.from(getContext());
-        View elemento = mostrado.inflate(R.layout.elemento_mensaje_lista, parent, false);
+        View view = mostrado.inflate(R.layout.elemento_mensaje_lista, parent, false);
 
-        TextView textoEmisor = elemento.findViewById(R.id.textoEmisorElementoMensaje);
-        TextView textoTitulo = elemento.findViewById(R.id.textoMensajeElementoMensaje);
-        TextView textoFecha = elemento.findViewById(R.id.textoFechaElementoMensaje);
+        TextView textoEmisor = view.findViewById(R.id.textoEmisorElementoMensaje);
+        TextView textoTitulo = view.findViewById(R.id.textoMensajeElementoMensaje);
+        TextView textoFecha = view.findViewById(R.id.textoFechaElementoMensaje);
 
         textoEmisor.setText(mensajes.get(position).getDniProfesorEmisor());
         textoTitulo.setText(mensajes.get(position).getMensaje());
         LocalDate fecha = mensajes.get(position).getFecha();
-        textoFecha.setText(fecha.getDayOfMonth()+"/"+fecha.getMonthValue()+"/"+fecha.getYear());
+        DateTimeFormatter formateadorDeFecha = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
-        return elemento;
+        textoFecha.setText(fecha.format(formateadorDeFecha));
+
+        return view;
     }
 }

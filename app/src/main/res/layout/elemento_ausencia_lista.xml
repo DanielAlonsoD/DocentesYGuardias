@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:id="@+id/layoutElementoAusencia"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/imagenElementoAusencia"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:src="@drawable/account_circle"
+        app:tint="@color/white"/>
+
+    <LinearLayout
+        android:id="@+id/layoutDatosElementoAusencia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textoAusenteElementoAusencia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/textoNombre"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/textoRazonElementoAusencia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/textoRazon"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:id="@+id/textoFechaHoraElementoAusencia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/textoFechaHoraNumero"
+            android:textSize="15sp"/>
+
+    </LinearLayout>
+
+</LinearLayout>

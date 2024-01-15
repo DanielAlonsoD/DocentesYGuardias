@@ -12,4 +12,10 @@
         android:title="@string/textoPerfil"
         android:icon="@drawable/person"
         app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/itemCerrarSesion"
+        android:title="@string/textoCerrarSesion"
+        android:icon="@drawable/logout"
+        app:showAsAction="always"/>
 </menu>

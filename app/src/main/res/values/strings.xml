@@ -10,6 +10,8 @@
     <string name="textoMenu">Menú</string>
     <string name="textoEditarPerfil">Editar Perfil</string>
     <string name="textoCambiarContrasena">Cambiar Contraseña</string>
+    <string name="textoHorario">Horario</string>
+    <string name="textoReuniones">Reuniones</string>
 
     <!--Texto utilizado en diferentes elementos-->
     <string name="textoIniciarSesion">Iniciar Sesión</string>
@@ -18,6 +20,7 @@
     <string name="textoMensajes">Mensajes</string>
 
     <!--Botones-->
+    <string name="textoCerrarSesion">Cerrar Sesión</string>
     <string name="textoGestionarPermisos">Gestionar Permisos</string>
     <string name="textoTareasAdministrativas">Tareas Administrativas</string>
     <string name="textoNotificarAusencias">Notificar Ausencias</string>
@@ -35,7 +38,9 @@
     <string name="textoNuevaContrasena">Nueva Contraseña</string>
     <string name="textoConfirmarContrasena">Confirmar Contraseña</string>
     <string name="textoMensaje">Mensaje</string>
+    <string name="textoRazon">Razón</string>
     <string name="textoFechaNumero">00/00/0000</string>
+    <string name="textoFechaHoraNumero">00/00/0000 00:00 - 00/00/0000 00:00</string>
 
     <!--Texto de errores-->
     <string name="errorInsertarDatosInicioSesion">El correo o la contraseña son incorrectos</string>

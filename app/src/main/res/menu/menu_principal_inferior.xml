@@ -2,19 +2,19 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/itemHome"
+        android:id="@+id/itemInicio"
         android:title=""
         android:icon="@drawable/home"
         app:showAsAction="always"/>
 
     <item
-        android:id="@+id/itemCalendar"
+        android:id="@+id/itemCalendario"
         android:title=""
         android:icon="@drawable/calendar"
         app:showAsAction="always"/>
 
     <item
-        android:id="@+id/itemNotifications"
+        android:id="@+id/itemNotificaciones"
         android:title=""
         android:icon="@drawable/notifications"
         app:showAsAction="always"/>

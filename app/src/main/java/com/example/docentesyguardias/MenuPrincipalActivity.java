@@ -33,7 +33,7 @@ public class MenuPrincipalActivity extends AppCompatActivity implements Toolbar.
         BottomNavigationView barraInferior = findViewById(R.id.barraInferiorMenuProfesor);
         barraInferior.setOnItemSelectedListener(this::onNavigationItemSelected);
 
-        navController.navigate(R.id.homeFragment, usuario);
+        navController.navigate(R.id.inicioFragment, usuario);
     }
 
     @Override
@@ -49,6 +49,10 @@ public class MenuPrincipalActivity extends AppCompatActivity implements Toolbar.
             Intent actividadPerfil = new Intent(MenuPrincipalActivity.this, PerfilActivity.class);
             actividadPerfil.putExtras(usuario);
             startActivity(actividadPerfil);
+        } else if (item.getItemId() == R.id.itemCerrarSesion) {
+            realizado = true;
+            Intent actividadMain = new Intent(MenuPrincipalActivity.this, MainActivity.class);
+            startActivity(actividadMain);
         }
         return realizado;
     }
@@ -56,15 +60,15 @@ public class MenuPrincipalActivity extends AppCompatActivity implements Toolbar.
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         boolean realizado = false;
-        if (item.getItemId() == R.id.itemHome) {
+        if (item.getItemId() == R.id.itemInicio) {
             realizado = true;
-            navController.navigate(R.id.homeFragment, usuario);
-        } else if (item.getItemId() == R.id.itemCalendar) {
+            navController.navigate(R.id.inicioFragment, usuario);
+        } else if (item.getItemId() == R.id.itemCalendario) {
             realizado = true;
-            navController.navigate(R.id.calendarFragment);
-        } else if (item.getItemId() == R.id.itemNotifications) {
+            navController.navigate(R.id.calendarioFragment);
+        } else if (item.getItemId() == R.id.itemNotificaciones) {
             realizado = true;
-            navController.navigate(R.id.notificationsFragment);
+            navController.navigate(R.id.notificacionesFragment);
         }
         return realizado;
     }
