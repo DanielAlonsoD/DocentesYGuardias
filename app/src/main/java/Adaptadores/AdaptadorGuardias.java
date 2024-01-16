@@ -25,7 +25,7 @@ public class AdaptadorGuardias extends ArrayAdapter<Guardia> {
 
 
     public AdaptadorGuardias(@NonNull Context contexto, ArrayList<Guardia> guardias) {
-        super(contexto, R.layout.elemento_guardia_lista);
+        super(contexto, R.layout.elemento_guardia_lista, guardias);
         this.guardias = guardias;
     }
 

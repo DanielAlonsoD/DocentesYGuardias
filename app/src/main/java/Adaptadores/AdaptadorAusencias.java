@@ -24,7 +24,7 @@ public class AdaptadorAusencias extends ArrayAdapter<Ausencia> {
 
 
     public AdaptadorAusencias(@NonNull Context contexto, ArrayList<Ausencia> ausencias) {
-        super(contexto, R.layout.elemento_ausencia_lista);
+        super(contexto, R.layout.elemento_ausencia_lista, ausencias);
         this.ausencias = ausencias;
     }
 

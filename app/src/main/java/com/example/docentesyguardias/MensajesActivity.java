@@ -39,15 +39,19 @@ public class MensajesActivity extends AppCompatActivity implements View.OnClickL
         if (profesor.getTipoProfesor().equals("Docente")) {
             botonCrear.setVisibility(View.GONE);
         }
-
-        mensajes = new ArrayList<>();
+        encabezado.setNavigationOnClickListener(this);
+        botonCrear.setOnClickListener(this);
+        mensajes = new ArrayList<Mensaje>();
         Mensaje m1 = new Mensaje(1, "712", "1", "Hola", LocalDate.now());
+        Mensaje m2 = new Mensaje(2, "712", "1", "Hola", LocalDate.now());
+        Mensaje m3 = new Mensaje(3, "712", "1", "Hola", LocalDate.now());
         mensajes.add(m1);
+        mensajes.add(m2);
+        mensajes.add(m3);
         AdaptadorMensajes adaptador = new AdaptadorMensajes(this, mensajes);
         listaMensajes.setAdapter(adaptador);
         Log.i("mensajeError", mensajes.size()+"");
-        encabezado.setNavigationOnClickListener(this);
-        botonCrear.setOnClickListener(this);
+
     }
 
     @Override

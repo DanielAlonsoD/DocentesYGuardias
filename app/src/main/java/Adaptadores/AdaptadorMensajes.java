@@ -24,7 +24,7 @@ public class AdaptadorMensajes extends ArrayAdapter<Mensaje> {
 
 
     public AdaptadorMensajes(@NonNull Context contexto, ArrayList<Mensaje> mensajes) {
-        super(contexto, R.layout.elemento_mensaje_lista);
+        super(contexto, R.layout.elemento_mensaje_lista, mensajes);
         this.mensajes = mensajes;
     }
 
