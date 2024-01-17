@@ -48,18 +48,17 @@ public class NotificacionesFragment extends Fragment {
         ListView lista = view.findViewById(R.id.listaNotifications);
 
         if (usuario.isEmpty()) {
-            Log.i("Usuario Vacío", "El usuario está vacío");
         } else if (profesor.getTipoProfesor().equals("Jefe de Estudios")) {
             ausencias = new ArrayList<>();
-            ausencias.add(new Ausencia(1, "23asda", "baja", LocalDateTime.of(0, 0,0,0,0), LocalDateTime.of(0,0,0,0,0)));
-            AdaptadorAusencias adaptador = new AdaptadorAusencias(view.getContext(), ausencias);
+            ausencias.add(new Ausencia(1, "23asda", "baja", LocalDateTime.of(1, 1,1,1,1), LocalDateTime.of(1,1,1,1,1)));
+            AdaptadorAusencias adaptador = new AdaptadorAusencias(getContext(), ausencias);
             lista.setAdapter(adaptador);
         } else {
             guardias = new ArrayList<>();
-            guardias.add(new Guardia(1, "23asda",1, LocalDateTime.of(0, 0,0,0,0), LocalDateTime.of(0,0,0,0,0)));
-            guardias.add(new Guardia(2, "23asda",1, LocalDateTime.of(0, 0,0,0,0), LocalDateTime.of(0,0,0,0,0)));
-            guardias.add(new Guardia(3, "23asda",1, LocalDateTime.of(0, 0,0,0,0), LocalDateTime.of(0,0,0,0,0)));
-            AdaptadorGuardias adaptador = new AdaptadorGuardias(view.getContext(), guardias);
+            guardias.add(new Guardia(1, "23asda",1, LocalDateTime.of(1, 1,1,1,1), LocalDateTime.of(1,1,1,1,1)));
+            guardias.add(new Guardia(2, "23asda",2, LocalDateTime.of(1, 1,1,1,1), LocalDateTime.of(1,1,1,1,1)));
+            guardias.add(new Guardia(3, "23asda",3, LocalDateTime.of(1, 1,1,1,1), LocalDateTime.of(1,1,1,1,1)));
+            AdaptadorGuardias adaptador = new AdaptadorGuardias(getContext(), guardias);
             lista.setAdapter(adaptador);
         }
 

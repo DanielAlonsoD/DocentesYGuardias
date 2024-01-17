@@ -39,7 +39,7 @@ public class AdaptadorGuardias extends ArrayAdapter<Guardia> {
         TextView textoAusente = view.findViewById(R.id.textoAusenteElementoGuardia);
         TextView textoFechaHora = view.findViewById(R.id.textoFechaHoraElementoGuardia);
 
-        textoAusente.setText(guardias.get(position).getAusencia());
+        textoAusente.setText(guardias.get(position).getAusencia()+"");
         LocalDateTime fechaHoraInicio = guardias.get(position).getFechaHoraInicio();
         LocalDateTime fechaHoraFin = guardias.get(position).getFechaHoraFin();
         DateTimeFormatter formateadorDeFechaHora = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");

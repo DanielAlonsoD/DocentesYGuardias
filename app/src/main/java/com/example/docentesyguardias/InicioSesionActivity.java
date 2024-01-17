@@ -5,11 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.snackbar.BaseTransientBottomBar;
 import com.google.android.material.snackbar.Snackbar;
 
 import Tablas.Profesor;
@@ -61,7 +63,9 @@ public class InicioSesionActivity extends AppCompatActivity implements View.OnCl
                 }
 
                 if (!realizado) {
-                    Snackbar.make(layout, R.string.errorInsertarDatosInicioSesion, Snackbar.LENGTH_SHORT).show();
+                    Snackbar mensaje = Snackbar.make(layout, R.string.errorInsertarDatosInicioSesion, Snackbar.LENGTH_INDEFINITE);
+                    getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
+                    mensaje.show();
                 }
             }
 

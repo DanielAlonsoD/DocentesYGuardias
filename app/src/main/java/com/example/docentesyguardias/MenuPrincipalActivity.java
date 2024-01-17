@@ -65,10 +65,10 @@ public class MenuPrincipalActivity extends AppCompatActivity implements Toolbar.
             navController.navigate(R.id.inicioFragment, usuario);
         } else if (item.getItemId() == R.id.itemCalendario) {
             realizado = true;
-            navController.navigate(R.id.calendarioFragment);
+            navController.navigate(R.id.calendarioFragment, usuario);
         } else if (item.getItemId() == R.id.itemNotificaciones) {
             realizado = true;
-            navController.navigate(R.id.notificacionesFragment);
+            navController.navigate(R.id.notificacionesFragment, usuario);
         }
         return realizado;
     }
