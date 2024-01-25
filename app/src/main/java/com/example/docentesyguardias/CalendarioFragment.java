@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 
 import com.google.android.material.tabs.TabLayout;
 
-import Tablas.Profesor;
+import tablas.Profesor;
 
 public class CalendarioFragment extends Fragment implements TabLayout.OnTabSelectedListener {
     Bundle usuario = new Bundle();
@@ -106,7 +106,7 @@ public class CalendarioFragment extends Fragment implements TabLayout.OnTabSelec
     public void cargarFragmento(Fragment fragmento) {
         getChildFragmentManager()
                 .beginTransaction()
-                .replace(R.id.contenedorFragmentosCalendar, fragmento)
+                .replace(R.id.contenedorFragmentosCalendario, fragmento)
                 .commit();
     }
 }

@@ -1,4 +1,4 @@
-package Adaptadores;
+package adaptadores;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -17,7 +17,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
-import Tablas.Ausencia;
+import tablas.Ausencia;
 
 public class AdaptadorAusencias extends ArrayAdapter<Ausencia> {
     private ArrayList<Ausencia> ausencias;

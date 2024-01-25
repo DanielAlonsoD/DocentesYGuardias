@@ -7,13 +7,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
 
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
-import Tablas.Profesor;
+import tablas.Profesor;
 
 public class CambiarContrasenaActivity extends AppCompatActivity implements View.OnClickListener {
     private Bundle usuario;

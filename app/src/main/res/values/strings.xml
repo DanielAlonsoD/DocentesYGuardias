@@ -27,6 +27,7 @@
     <string name="textoFijarTareas">Fijar Tareas</string>
     <string name="textoAsignarGuardias">Asignar Guardias</string>
     <string name="textoElaborarInformes">Elaborar Informes</string>
+    <string name="textoAsistencia">Asistencia</string>
 
     <!--Textos-->
     <string name="textoDNI">DNI</string>
@@ -40,7 +41,18 @@
     <string name="textoMensaje">Mensaje</string>
     <string name="textoRazon">Razón</string>
     <string name="textoFechaNumero">00/00/0000</string>
-    <string name="textoFechaHoraNumero">00/00/0000 00:00 - 00/00/0000 00:00</string>
+    <string name="textoFechaHoraNumero">00/00/0000 00:00</string>
+    <string name="textoFechaHoraInicYFinNumero">00/00/0000 00:00 - 00/00/0000 00:00</string>
+
+    <!--Textos de Asistencias-->
+    <string name="textoTituloCambiarAsistencia">Cambiar Asistencia</string>
+    <string name="textoCambiarAsistenciaDescripción">Elija una de las tres opciones:</string>
+    <string name="textoOpcionAsistirAfirmativa">Asistiré</string>
+    <string name="textoOpcionAsistirNegativa">No Asistiré</string>
+    <string name="textoOpcionAsistirDubitativa">No Sé Si Asistiré</string>
+    <string name="textoSiAsistir">Asistencia: Si</string>
+    <string name="textoNoAsistir">Asistencia: No</string>
+    <string name="textoNoSeSiAsistir">Asistencia: Tal vez</string>
 
     <!--Texto de errores-->
     <string name="errorInsertarDatosInicioSesion">El correo o la contraseña son incorrectos</string>

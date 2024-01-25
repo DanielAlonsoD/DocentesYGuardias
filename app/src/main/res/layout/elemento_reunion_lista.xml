@@ -1,47 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:id="@+id/layoutElementoAusencia"
+<RelativeLayout android:id="@+id/layoutElementoReunion"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <ImageView
-        android:id="@+id/imagenElementoAusencia"
+        android:id="@+id/imagenElementoReunion"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:layout_gravity="center"
-        android:src="@drawable/account_circle"
-        app:tint="@color/white"/>
+        android:src="@drawable/question_mark"
+        app:tint="@color/orange_tree_poppy"/>
 
     <LinearLayout
-        android:id="@+id/layoutDatosElementoAusencia"
+        android:id="@+id/layoutDatosElementoReunion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/imagenElementoReunion"
         android:layout_marginTop="10dp"
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/textoAusenteElementoAusencia"
+            android:id="@+id/textoCreadorElementoReunion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/textoNombre"
             android:textSize="20sp"/>
 
         <TextView
-            android:id="@+id/textoRazonElementoAusencia"
+            android:id="@+id/textoAusenciaElementoReunion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/textoRazon"
+            android:text="@string/textoNoSeSiAsistir"
             android:textSize="15sp"/>
 
         <TextView
-            android:id="@+id/textoFechaHoraElementoAusencia"
+            android:id="@+id/textoFechaHoraElementoReunion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/textoFechaHoraInicYFinNumero"
+            android:text="@string/textoFechaHoraNumero"
             android:textSize="15sp"/>
 
     </LinearLayout>
 
-</LinearLayout>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/botonCambiarAsistenciaReunion"
+        style="?attr/buttonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="10dp"
+        android:layout_alignParentRight="true"
+        android:text="@string/textoAsistencia" />
+
+</RelativeLayout>

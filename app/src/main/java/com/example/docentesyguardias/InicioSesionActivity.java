@@ -11,10 +11,9 @@ import android.widget.LinearLayout;
 
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.button.MaterialButton;
-import com.google.android.material.snackbar.BaseTransientBottomBar;
 import com.google.android.material.snackbar.Snackbar;
 
-import Tablas.Profesor;
+import tablas.Profesor;
 
 public class InicioSesionActivity extends AppCompatActivity implements View.OnClickListener {
     private Profesor profesorPrueba1 = new Profesor("78945367G", "Pepe", "pepe.sangor@sanviatorvalladolid.com", "Docente", "Técnico Informático", "123456");

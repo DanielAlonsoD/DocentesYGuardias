@@ -6,7 +6,6 @@ import android.os.Bundle;
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,11 +14,11 @@ import android.widget.ListView;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
-import Adaptadores.AdaptadorAusencias;
-import Adaptadores.AdaptadorGuardias;
-import Tablas.Ausencia;
-import Tablas.Guardia;
-import Tablas.Profesor;
+import adaptadores.AdaptadorAusencias;
+import adaptadores.AdaptadorGuardias;
+import tablas.Ausencia;
+import tablas.Guardia;
+import tablas.Profesor;
 
 public class NotificacionesFragment extends Fragment {
     private Bundle usuario = new Bundle();
@@ -45,7 +44,7 @@ public class NotificacionesFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_notificaciones, container, false);
 
-        ListView lista = view.findViewById(R.id.listaNotifications);
+        ListView lista = view.findViewById(R.id.listaNotificaciones);
 
         if (usuario.isEmpty()) {
         } else if (profesor.getTipoProfesor().equals("Jefe de Estudios")) {

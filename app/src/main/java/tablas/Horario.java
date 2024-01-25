@@ -1,4 +1,4 @@
-package Tablas;
+package tablas;
 
 import java.time.LocalTime;
 

@@ -1,4 +1,4 @@
-package Adaptadores;
+package adaptadores;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -17,7 +17,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
-import Tablas.Mensaje;
+import tablas.Mensaje;
 
 public class AdaptadorMensajes extends ArrayAdapter<Mensaje> {
     private ArrayList<Mensaje> mensajes;

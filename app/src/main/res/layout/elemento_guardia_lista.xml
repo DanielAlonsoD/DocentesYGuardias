@@ -32,7 +32,7 @@
             android:id="@+id/textoFechaHoraElementoGuardia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/textoFechaHoraNumero"
+            android:text="@string/textoFechaHoraInicYFinNumero"
             android:textSize="15sp"/>
         
     </LinearLayout>

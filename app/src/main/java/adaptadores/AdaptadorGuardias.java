@@ -1,4 +1,4 @@
-package Adaptadores;
+package adaptadores;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -13,12 +13,11 @@ import androidx.annotation.Nullable;
 
 import com.example.docentesyguardias.R;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
-import Tablas.Guardia;
+import tablas.Guardia;
 
 public class AdaptadorGuardias extends ArrayAdapter<Guardia> {
     private ArrayList<Guardia> guardias;

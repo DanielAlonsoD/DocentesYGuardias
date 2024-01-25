@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 
 import com.google.android.material.button.MaterialButton;
 
-import Tablas.Profesor;
+import tablas.Profesor;
 
 public class InicioFragment extends Fragment {
     private Bundle usuario = new Bundle();

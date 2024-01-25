@@ -15,9 +15,9 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-import Adaptadores.AdaptadorMensajes;
-import Tablas.Mensaje;
-import Tablas.Profesor;
+import adaptadores.AdaptadorMensajes;
+import tablas.Mensaje;
+import tablas.Profesor;
 
 public class MensajesActivity extends AppCompatActivity implements View.OnClickListener {
     private Bundle usuario;
