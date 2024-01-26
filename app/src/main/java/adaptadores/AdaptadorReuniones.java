@@ -1,8 +1,11 @@
 package adaptadores;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.res.ColorStateList;
+import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +15,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 
 import com.example.docentesyguardias.R;
 import com.google.android.material.button.MaterialButton;
@@ -29,8 +33,11 @@ public class AdaptadorReuniones extends ArrayAdapter<Reunion> implements View.On
 
     public AdaptadorReuniones(@NonNull Context contexto, @NonNull ArrayList<Reunion> reuniones) {
         super(contexto, R.layout.elemento_reunion_lista, reuniones);
+        this.reuniones = reuniones;
     }
 
+    @SuppressLint("ResourceAsColor")
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
@@ -44,13 +51,13 @@ public class AdaptadorReuniones extends ArrayAdapter<Reunion> implements View.On
 
         String asistencia = reuniones.get(position).getAsistencia();
 
-        textoCreadorReunion.setText(reuniones.get(position).getDniProfesor());
+        textoCreadorReunion.setText(reuniones.get(position).getDniProfesor().toString());
 
-        if (asistencia.equals(R.string.textoOpcionAsistirAfirmativa)) {
-            imagenAsistencia.setImageResource(R.drawable.check);
-            imagenAsistencia.setColorFilter(R.color.green_mantis);
+        if (asistencia.equals("Asistiré")) {
+            imagenAsistencia.setImageResource(R.drawable.check_red);
+           //imagenAsistencia.setImageTintList(ColorStateList.valueOf(R.color.green_mantis));
             textoAsistencia.setText(R.string.textoSiAsistir);
-        } else if (asistencia.equals(R.string.textoOpcionAsistirNegativa)) {
+        } else if (asistencia.equals("No Asistiré")) {
             imagenAsistencia.setImageResource(R.drawable.close);
             imagenAsistencia.setColorFilter(R.color.red);
             textoAsistencia.setText(R.string.textoNoAsistir);
@@ -67,7 +74,7 @@ public class AdaptadorReuniones extends ArrayAdapter<Reunion> implements View.On
 
     @Override
     public void onClick(View v) {
-        String[] opciones = {String.valueOf(R.string.textoOpcionAsistirAfirmativa), String.valueOf(R.string.textoOpcionAsistirNegativa), String.valueOf(R.string.textoOpcionAsistirDubitativa)};
+        String[] opciones = {"Asistiré", "No Asistiré", "No Sé Si Asistiré"};
 
         AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
         builder.setTitle(R.string.textoTituloCambiarAsistencia);

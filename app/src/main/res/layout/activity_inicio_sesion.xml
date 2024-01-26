@@ -12,7 +12,7 @@
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/encabezadoInicioSesión"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="60dp"
         app:navigationIcon="@drawable/arrow_back"
         app:title="@string/textoInicioDeSesion"/>

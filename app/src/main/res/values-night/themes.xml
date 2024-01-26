@@ -19,6 +19,7 @@
         <item name="textInputStyle">@style/TextInputs.Dark</item>
         <item name="android:textViewStyle">@style/TextView.Dark</item>
         <item name="dropDownListViewStyle">@style/Spinner.Dark</item>
+        <item name="imageButtonStyle">@style/ImageButton.Dark</item>
         <item name="bottomNavigationStyle">@style/BottomNavigation.Dark</item>
     </style>
 
@@ -64,6 +65,11 @@
 
     <style name="Spinner.Dark" parent="Spinner">
         <item name="android:background">@color/blue_mirage</item>
+    </style>
+
+    <style name="ImageButton.Dark" parent="Widget.AppCompat.ImageButton">
+        <item name="android:tint">@color/white</item>
+        <item name="android:backgroundTint">@color/blue_mirage</item>
     </style>
 
     <style name="BottomNavigation.Dark" parent="BottomNavigation">

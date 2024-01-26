@@ -18,14 +18,14 @@
     <string name="textoRegistrarse">Registrarse</string>
     <string name="textoPerfil">Perfil</string>
     <string name="textoMensajes">Mensajes</string>
+    <string name="textoFijarTareas">Fijar Tarea</string>
+    <string name="textoAsignarGuardias">Asignar Guardias</string>
 
     <!--Botones-->
     <string name="textoCerrarSesion">Cerrar Sesión</string>
     <string name="textoGestionarPermisos">Gestionar Permisos</string>
     <string name="textoTareasAdministrativas">Tareas Administrativas</string>
     <string name="textoNotificarAusencias">Notificar Ausencias</string>
-    <string name="textoFijarTareas">Fijar Tareas</string>
-    <string name="textoAsignarGuardias">Asignar Guardias</string>
     <string name="textoElaborarInformes">Elaborar Informes</string>
     <string name="textoAsistencia">Asistencia</string>
 
@@ -40,6 +40,7 @@
     <string name="textoConfirmarContrasena">Confirmar Contraseña</string>
     <string name="textoMensaje">Mensaje</string>
     <string name="textoRazon">Razón</string>
+    <string name="textoTarea">Tarea</string>
     <string name="textoFechaNumero">00/00/0000</string>
     <string name="textoFechaHoraNumero">00/00/0000 00:00</string>
     <string name="textoFechaHoraInicYFinNumero">00/00/0000 00:00 - 00/00/0000 00:00</string>

@@ -48,7 +48,7 @@
             android:textSize="18sp"/>
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/botonFijarTareas"
+            android:id="@+id/botonFijarTarea"
             style="?attr/buttonStyle"
             android:layout_width="match_parent"
             android:layout_height="150dp"
@@ -59,7 +59,7 @@
             android:textSize="18sp"/>
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/botonAsignarGuardias"
+            android:id="@+id/botonAsignarGuardia"
             style="?attr/buttonStyle"
             android:layout_width="match_parent"
             android:layout_height="150dp"

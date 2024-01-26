@@ -13,6 +13,12 @@
         android:theme="@style/Theme.DocentesYGuardias"
         tools:targetApi="31">
         <activity
+            android:name=".FijarTareaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AsignarGuardiaActivity"
+            android:exported="false" />
+        <activity
             android:name=".MensajesActivity"
             android:exported="false" />
         <activity

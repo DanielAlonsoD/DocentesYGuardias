@@ -19,6 +19,7 @@
         <item name="textInputStyle">@style/TextInputs</item>
         <item name="android:textViewStyle">@style/TextView</item>
         <item name="dropDownListViewStyle">@style/Spinner</item>
+        <item name="imageButtonStyle">@style/ImageButton</item>
         <item name="bottomNavigationStyle">@style/BottomNavigation</item>
     </style>
 
@@ -64,6 +65,11 @@
 
     <style name="Spinner" parent="Widget.AppCompat.ListView.DropDown">
         <item name="android:background">@color/cyan_danube</item>
+    </style>
+    
+    <style name="ImageButton" parent="Widget.AppCompat.ImageButton">
+        <item name="android:tint">@color/white</item>
+        <item name="backgroundTint">@color/cyan_danube</item>
     </style>
 
     <style name="BottomNavigation" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
