@@ -1,4 +1,63 @@
 package adaptadores;
 
-public class AdaptadorTareas {
+import android.content.Context;
+import android.os.Build;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
+
+import com.example.docentesyguardias.R;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+
+import tablas.Tarea;
+
+public class AdaptadorTareas extends ArrayAdapter<Tarea> {
+    private ArrayList<Tarea> tareas;
+
+
+    public AdaptadorTareas(@NonNull Context context, int resource, @NonNull ArrayList<Tarea> tareas) {
+        super(context, R.layout.elemento_tarea_lista);
+        this.tareas = tareas;
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    @NonNull
+    @Override
+    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+        View view = LayoutInflater.from(getContext()).inflate(R.layout.elemento_tarea_lista, parent, false);
+
+        ImageView imagenTareaRealizada = view.findViewById(R.id.imagenElementoTarea);
+        TextView textoTipoTarea = view.findViewById(R.id.textoTipoTareaElementoTarea);
+        TextView textoRealizada = view.findViewById(R.id.textoRealizadaElementoTarea);
+        TextView textoFechaEntrega = view.findViewById(R.id.textoFechaEntregaElementoTarea);
+
+        textoTipoTarea.setText(tareas.get(position).getTipoTarea());
+
+        boolean realizado = tareas.get(position).isRealizado();
+        if (realizado) {
+            imagenTareaRealizada.setImageResource(R.drawable.check);
+            imagenTareaRealizada.setColorFilter(getContext().getResources().getColor(R.color.green_mantis));
+            textoRealizada.setText(R.string.textoTareaRealizada);
+        } else {
+            imagenTareaRealizada.setImageResource(R.drawable.close);
+            imagenTareaRealizada.setColorFilter(getContext().getResources().getColor(R.color.red));
+            textoRealizada.setText(R.string.textoTareaNoRealizada);
+        }
+
+        DateTimeFormatter formateadorFecha = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        LocalDate fecha = tareas.get(position).getFechaFin();
+        textoFechaEntrega.setText(fecha.format(formateadorFecha));
+
+        return view;
+    }
 }
