@@ -57,7 +57,9 @@ public class MensajesActivity extends AppCompatActivity implements View.OnClickL
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.botonCrearMensaje) {
-
+            Intent actividadCrearMensaje = new Intent(MensajesActivity.this, CrearMensajeActivity.class);
+            actividadCrearMensaje.putExtras(usuario);
+            startActivity(actividadCrearMensaje);
         } else {
             Intent actividadMenuPrincipal = new Intent(MensajesActivity.this, MenuPrincipalActivity.class);
             actividadMenuPrincipal.putExtras(usuario);

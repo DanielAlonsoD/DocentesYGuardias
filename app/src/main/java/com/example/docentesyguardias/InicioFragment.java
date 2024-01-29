@@ -35,9 +35,9 @@ public class InicioFragment extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_inicio, container, false);
 
-        MaterialButton botonGestionarPermisos = view.findViewById(R.id.botonGestionarPermisos);
-        MaterialButton botonTareasAdministrativas = view.findViewById(R.id.botonTareasAdministrativas);
-        MaterialButton botonNotificarAusencias = view.findViewById(R.id.botonNotificarAusencias);
+        MaterialButton botonGestionarPermisos = view.findViewById(R.id.botonGenerarPermiso);
+        MaterialButton botonTareasAdministrativas = view.findViewById(R.id.botonAdministrarTareas);
+        MaterialButton botonNotificarAusencias = view.findViewById(R.id.botonCrearAusencia);
         MaterialButton botonFijarTareas = view.findViewById(R.id.botonFijarTarea);
         MaterialButton botonAsignarGuardias = view.findViewById(R.id.botonAsignarGuardia);
         MaterialButton botonElaboracionInformes = view.findViewById(R.id.botonElaboracionInformes);
@@ -65,12 +65,18 @@ public class InicioFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        if (v.getId() == R.id.botonGestionarPermisos) {
-
-        } else if (v.getId() == R.id.botonTareasAdministrativas) {
-
-        } else if (v.getId() == R.id.botonNotificarAusencias) {
-
+        if (v.getId() == R.id.botonGenerarPermiso) {
+            Intent actividadGenerarPermiso = new Intent(getActivity(), GenerarPermisoActivity.class);
+            actividadGenerarPermiso.putExtras(usuario);
+            startActivity(actividadGenerarPermiso);
+        } else if (v.getId() == R.id.botonAdministrarTareas) {
+            Intent actividadAdministrarTareas = new Intent(getActivity(), AdministrarTareasActivity.class);
+            actividadAdministrarTareas.putExtras(usuario);
+            startActivity(actividadAdministrarTareas);
+        } else if (v.getId() == R.id.botonCrearAusencia) {
+            Intent actividadCrearAusencia = new Intent(getActivity(), CrearAusenciaActivity.class);
+            actividadCrearAusencia.putExtras(usuario);
+            startActivity(actividadCrearAusencia);
         } else if (v.getId() == R.id.botonFijarTarea) {
             Intent actividadFijarTarea = new Intent(getActivity(), FijarTareaActivity.class);
             actividadFijarTarea.putExtras(usuario);
@@ -80,7 +86,9 @@ public class InicioFragment extends Fragment implements View.OnClickListener {
             actividadAsignarGuardia.putExtras(usuario);
             startActivity(actividadAsignarGuardia);
         } else if (v.getId() == R.id.botonElaboracionInformes) {
-
+            Intent actividadElaborarInforme = new Intent(getActivity(), ElaborarInformeActivity.class);
+            actividadElaborarInforme.putExtras(usuario);
+            startActivity(actividadElaborarInforme);
         }
     }
 }

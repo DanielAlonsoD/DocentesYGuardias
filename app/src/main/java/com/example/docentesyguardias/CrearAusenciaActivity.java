@@ -26,49 +26,36 @@ import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 
-public class AsignarGuardiaActivity extends AppCompatActivity implements View.OnClickListener {
+public class CrearAusenciaActivity extends AppCompatActivity implements View.OnClickListener {
     private Bundle usuario;
     private Calendar calendario;
     private TextView textoFechaHoraInicio, textoFechaHoraFin;
-    String profesorAusente, profesorGuardia, fechaHora;
+    private String ausencia, fechaHora;
     private LocalDate fecha;
     private LocalTime horaYMinuto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_asignar_guardia);
+        setContentView(R.layout.activity_crear_ausencia);
 
         usuario = getIntent().getExtras();
         calendario = Calendar.getInstance();
 
-        MaterialToolbar encabezado = findViewById(R.id.encabezadoAsignarGuardia);
-        Spinner spinnerProfesorAusente = findViewById(R.id.spinnerProfesorAusenteAsignarGuardia);
-        Spinner spinnerProfesorGuardia = findViewById(R.id.spinnerProfesorGuardiaAsignarGuardia);
-        textoFechaHoraInicio = findViewById(R.id.textoFechaHoraInicioAsignarGuardia);
-        ImageButton botonFechaHoraInicio = findViewById(R.id.botonFechaHoraInicioAsignarGuardia);
-        textoFechaHoraFin = findViewById(R.id.textoFechaHoraFinAsignarGuardia);
-        ImageButton botonFechaHoraFin = findViewById(R.id.botonFechaHoraFinAsignarGuardia);
-        FloatingActionButton botonRealizado = findViewById(R.id.botonRealizadoAsignarGuardia);
+        MaterialToolbar encabezado = findViewById(R.id.encabezadoCrearAusencia);
+        Spinner spinnerTipoAusencia = findViewById(R.id.spinnerTipoAusencia);
+        textoFechaHoraInicio = findViewById(R.id.textoFechaHoraInicioCrearAusencia);
+        ImageButton botonFechaHoraInicio = findViewById(R.id.botonFechaHoraInicioCrearAusencia);
+        textoFechaHoraFin = findViewById(R.id.textoFechaHoraFinCrearAusencia);
+        ImageButton botonFechaHoraFin = findViewById(R.id.botonFechaHoraFinCrearAusencia);
+        FloatingActionButton botonRealizado = findViewById(R.id.botonRealizadoCrearAusencia);
 
-        String[] profesoresAusentes = {"Selecciona una Ausencia", "Pepe", "Pepa", "Pedro"};
-        spinnerProfesorAusente.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, profesoresAusentes));
-        spinnerProfesorAusente.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        String[] opciones = {"Selecciona una opción", "Baja", "Enfermedad", "Consulta Médica"};
+        spinnerTipoAusencia.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, opciones));
+        spinnerTipoAusencia.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                profesorAusente = parent.getItemAtPosition(position).toString();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {}
-        });
-
-        String[] profesoresGuardias = {"Selecciona al que realice la Guardia", "Pepe", "Pepa", "Pedro"};
-        spinnerProfesorGuardia.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, profesoresGuardias));
-        spinnerProfesorGuardia.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                profesorGuardia = parent.getItemAtPosition(position).toString();
+                ausencia = parent.getItemAtPosition(position).toString();
             }
 
             @Override
@@ -84,7 +71,7 @@ public class AsignarGuardiaActivity extends AppCompatActivity implements View.On
     @SuppressLint("NewApi")
     @Override
     public void onClick(View v) {
-        if (v.getId() == R.id.botonFechaHoraInicioAsignarGuardia || v.getId() == R.id.botonFechaHoraFinAsignarGuardia) {
+        if (v.getId() == R.id.botonFechaHoraInicioCrearAusencia || v.getId() == R.id.botonFechaHoraFinCrearAusencia) {
             int anyo = calendario.get(Calendar.YEAR);
             int mes = calendario.get(Calendar.MONTH);
             int dia = calendario.get(Calendar.DAY_OF_MONTH);
@@ -96,14 +83,14 @@ public class AsignarGuardiaActivity extends AppCompatActivity implements View.On
                 public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                     fecha = LocalDate.of(year, month+1, dayOfMonth);
 
-                    TimePickerDialog timePickerDialog = new TimePickerDialog(AsignarGuardiaActivity.this, new TimePickerDialog.OnTimeSetListener() {
+                    TimePickerDialog timePickerDialog = new TimePickerDialog(CrearAusenciaActivity.this, new TimePickerDialog.OnTimeSetListener() {
                         @Override
                         public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                             horaYMinuto = LocalTime.of(hourOfDay, minute);
                             DateTimeFormatter formateadorDeFecha = DateTimeFormatter.ofPattern("dd/MM/yyyy");
                             DateTimeFormatter formateadorDeHora = DateTimeFormatter.ofPattern("HH:mm");
                             fechaHora = fecha.format(formateadorDeFecha)+" "+horaYMinuto.format(formateadorDeHora);
-                            if (v.getId() == R.id.botonFechaHoraInicioAsignarGuardia) {
+                            if (v.getId() == R.id.botonFechaHoraInicioCrearAusencia) {
                                 textoFechaHoraInicio.setText(fechaHora);
                             } else {
                                 textoFechaHoraFin.setText(fechaHora);
@@ -114,12 +101,12 @@ public class AsignarGuardiaActivity extends AppCompatActivity implements View.On
                 }
             }, anyo, mes, dia);
             datePickerDialog.show();
-        } else if (v.getId() == R.id.botonRealizadoAsignarGuardia) {
+        } else if (v.getId() == R.id.botonRealizadoCrearAusencia) {
             String fechaHoraInicio = textoFechaHoraInicio.getText().toString();
             String fechaHoraFin = textoFechaHoraFin.getText().toString();
 
-            if (profesorAusente.equals("Selecciona una Ausencia") || profesorGuardia.equals("Selecciona al que realice la Guardia") || fechaHoraInicio.equals("00/00/0000 00:00") || fechaHoraFin.equals("00/00/0000 00:00")) {
-                RelativeLayout layout = findViewById(R.id.layoutAsignarGuardia);
+            if (ausencia.equals("Selecciona una opción") || fechaHoraInicio.equals("00/00/0000 00:00") || fechaHoraFin.equals("00/00/0000 00:00")) {
+                RelativeLayout layout = findViewById(R.id.layoutCrearAusencia);
                 Snackbar.make(layout, R.string.errorTextosVacíos, Snackbar.LENGTH_SHORT).show();
             } else {
                 Intent actividadMenuPrincipal = new Intent(this, MenuPrincipalActivity.class);

@@ -1,38 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
-    android:id="@+id/layoutAsignarGuardia"
+    android:id="@+id/layoutGenerarPermiso"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AsignarGuardiaActivity"
-    android:orientation="vertical">
+    tools:context=".GenerarPermisoActivity">
 
     <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/encabezadoAsignarGuardia"
+        android:id="@+id/encabezadoGenerarPermiso"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="60dp"
         app:navigationIcon="@drawable/arrow_back"
-        app:title="@string/textoAsignarGuardias"/>
+        app:title="@string/textoGenerarPermiso"/>
 
     <Spinner
-        android:id="@+id/spinnerProfesorAusenteAsignarGuardia"
+        android:id="@+id/spinnerTipoPermiso"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/encabezadoAsignarGuardia"
-        android:layout_marginTop="5dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
-        android:paddingTop="8dp"
-        android:paddingBottom="8dp"/>
-
-    <Spinner
-        android:id="@+id/spinnerProfesorGuardiaAsignarGuardia"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/spinnerProfesorAusenteAsignarGuardia"
+        android:layout_below="@id/encabezadoGenerarPermiso"
         android:layout_marginTop="5dp"
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
@@ -40,16 +28,16 @@
         android:paddingBottom="8dp"/>
 
     <LinearLayout
-        android:id="@+id/layoutFechaHoraInicioAsignarGuardia"
+        android:id="@+id/layoutFechaHoraInicioGenerarPermiso"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/spinnerProfesorGuardiaAsignarGuardia"
-        android:layout_marginTop="5dp"
+        android:layout_below="@id/spinnerTipoPermiso"
+        android:layout_marginTop="25dp"
         android:gravity="center"
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/textoFechaHoraInicioAsignarGuardia"
+            android:id="@+id/textoFechaHoraInicioGenerarPermiso"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="20dp"
@@ -57,7 +45,7 @@
             android:textSize="18sp"/>
 
         <ImageButton
-            android:id="@+id/botonFechaHoraInicioAsignarGuardia"
+            android:id="@+id/botonFechaHoraInicioGenerarPermiso"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/calendar"/>
@@ -65,16 +53,16 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/layoutFechaHoraFinAsignarGuardia"
+        android:id="@+id/layoutFechaHoraFinGenerarPermiso"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/layoutFechaHoraInicioAsignarGuardia"
-        android:layout_marginTop="5dp"
+        android:layout_below="@id/layoutFechaHoraInicioGenerarPermiso"
+        android:layout_marginTop="25dp"
         android:gravity="center"
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/textoFechaHoraFinAsignarGuardia"
+            android:id="@+id/textoFechaHoraFinGenerarPermiso"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="20dp"
@@ -82,7 +70,7 @@
             android:textSize="18sp"/>
 
         <ImageButton
-            android:id="@+id/botonFechaHoraFinAsignarGuardia"
+            android:id="@+id/botonFechaHoraFinGenerarPermiso"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/calendar"/>
@@ -90,7 +78,7 @@
     </LinearLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/botonRealizadoAsignarGuardia"
+        android:id="@+id/botonRealizadoGenerarPermiso"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"

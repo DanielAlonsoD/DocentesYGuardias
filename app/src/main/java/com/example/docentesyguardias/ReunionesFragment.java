@@ -1,5 +1,6 @@
 package com.example.docentesyguardias;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -20,7 +21,7 @@ import adaptadores.AdaptadorReuniones;
 import tablas.Profesor;
 import tablas.Reunion;
 
-public class ReunionesFragment extends Fragment {
+public class ReunionesFragment extends Fragment implements View.OnClickListener {
     Bundle usuario = new Bundle();
     Profesor profesor = new Profesor();
     ArrayList<Reunion> reuniones = new ArrayList<>();
@@ -58,6 +59,15 @@ public class ReunionesFragment extends Fragment {
         AdaptadorReuniones adaptador = new AdaptadorReuniones(getContext(), reuniones);
         lista.setAdapter(adaptador);
 
+        botonCrear.setOnClickListener(this);
+
         return view;
+    }
+
+    @Override
+    public void onClick(View v) {
+        Intent actividadCrearReunion = new Intent(getActivity(), CrearReunionActivity.class);
+        actividadCrearReunion.putExtras(usuario);
+        startActivity(actividadCrearReunion);
     }
 }

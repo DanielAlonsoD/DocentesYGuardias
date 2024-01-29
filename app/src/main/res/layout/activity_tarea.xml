@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/layoutTarea"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TareaActivity">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/encabezadoTarea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        app:navigationIcon="@drawable/arrow_back"
+        app:title="@string/textoTarea"/>
+
+    <TextView
+        android:id="@+id/textoNombreTipoTarea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/encabezadoTarea"
+        android:layout_marginBottom="20dp"
+        android:text="@string/textoNombre"
+        android:textAlignment="center"
+        android:textSize="30sp"/>
+
+    <TextView
+        android:id="@+id/textoDescripcionTarea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_below="@id/textoNombreTipoTarea"
+        android:text="@string/textoTarea"
+        android:textAlignment="center"
+        android:textSize="15sp"/>
+
+    <TextView
+        android:id="@+id/textoFechaFinTarea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_below="@id/textoDescripcionTarea"
+        android:text="@string/textoFechaNumero"
+        android:textAlignment="center"
+        android:textSize="20sp"/>
+
+    <Spinner
+        android:id="@+id/spinnerTareaRealizada"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textoFechaFinTarea"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/botonRealizadoCambiarTarea"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/check"
+        app:maxImageSize="30dp"/>
+
+</RelativeLayout>

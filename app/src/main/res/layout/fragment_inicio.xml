@@ -16,35 +16,35 @@
         android:orientation="vertical">
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/botonGestionarPermisos"
+            android:id="@+id/botonGenerarPermiso"
             style="?attr/buttonStyle"
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
-            android:text="@string/textoGestionarPermisos"
+            android:text="@string/textoGenerarPermiso"
             android:textSize="18sp"/>
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/botonTareasAdministrativas"
+            android:id="@+id/botonAdministrarTareas"
             style="?attr/buttonStyle"
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:layout_marginTop="15dp"
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
-            android:text="@string/textoTareasAdministrativas"
+            android:text="@string/textoAdministrarTareas"
             android:textSize="18sp"/>
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/botonNotificarAusencias"
+            android:id="@+id/botonCrearAusencia"
             style="?attr/buttonStyle"
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:layout_marginTop="15dp"
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
-            android:text="@string/textoNotificarAusencias"
+            android:text="@string/textoCrearAusencia"
             android:textSize="18sp"/>
 
         <com.google.android.material.button.MaterialButton
@@ -77,7 +77,7 @@
             android:layout_marginTop="15dp"
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
-            android:text="@string/textoElaborarInformes"
+            android:text="@string/textoElaborarInforme"
             android:textSize="18sp"/>
     </LinearLayout>
 

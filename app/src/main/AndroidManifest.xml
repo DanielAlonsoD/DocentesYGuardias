@@ -13,6 +13,30 @@
         android:theme="@style/Theme.DocentesYGuardias"
         tools:targetApi="31">
         <activity
+            android:name=".CrearReunionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CrearReunion"
+            android:exported="false" />
+        <activity
+            android:name=".CrearMensajeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CrearAusenciaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GenerarPermisoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TareaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdministrarTareasActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ElaborarInformeActivity"
+            android:exported="false" />
+        <activity
             android:name=".FijarTareaActivity"
             android:exported="false" />
         <activity

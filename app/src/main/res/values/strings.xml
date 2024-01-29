@@ -12,21 +12,24 @@
     <string name="textoCambiarContrasena">Cambiar Contraseña</string>
     <string name="textoHorario">Horario</string>
     <string name="textoReuniones">Reuniones</string>
+    <string name="textoCrearMensaje">Crear Mensaje</string>
+    <string name="textoCrearReunion">Crear Reunión</string>
 
     <!--Texto utilizado en diferentes elementos-->
     <string name="textoIniciarSesion">Iniciar Sesión</string>
     <string name="textoRegistrarse">Registrarse</string>
     <string name="textoPerfil">Perfil</string>
     <string name="textoMensajes">Mensajes</string>
+    <string name="textoGenerarPermiso">Generar Permiso</string>
+    <string name="textoAdministrarTareas">Administrar Tareas</string>
     <string name="textoFijarTareas">Fijar Tarea</string>
     <string name="textoAsignarGuardias">Asignar Guardias</string>
+    <string name="textoElaborarInforme">Elaborar Informe</string>
+    <string name="textoTarea">Tarea</string>
 
     <!--Botones-->
     <string name="textoCerrarSesion">Cerrar Sesión</string>
-    <string name="textoGestionarPermisos">Gestionar Permisos</string>
-    <string name="textoTareasAdministrativas">Tareas Administrativas</string>
-    <string name="textoNotificarAusencias">Notificar Ausencias</string>
-    <string name="textoElaborarInformes">Elaborar Informes</string>
+    <string name="textoCrearAusencia">Crear Ausencia</string>
     <string name="textoAsistencia">Asistencia</string>
 
     <!--Textos-->
@@ -38,19 +41,23 @@
     <string name="textoContrasena">Contraseña</string>
     <string name="textoNuevaContrasena">Nueva Contraseña</string>
     <string name="textoConfirmarContrasena">Confirmar Contraseña</string>
-    <string name="textoMensaje">Mensaje</string>
+    <string name="textoDestinatarios">Destinatarios</string>
+    <string name="textoInvitados">Invitados</string>
+    <string name="textoTitulo">Título</string>
+    <string name="textoMensaje">Mensaje:</string>
     <string name="textoRazon">Razón</string>
-    <string name="textoTarea">Tarea</string>
+    <string name="textoDescripcion">Descripción:</string>
+    <string name="textoOpcional">Opcional</string>
     <string name="textoFechaNumero">00/00/0000</string>
     <string name="textoFechaHoraNumero">00/00/0000 00:00</string>
     <string name="textoFechaHoraInicYFinNumero">00/00/0000 00:00 - 00/00/0000 00:00</string>
 
+    <!--Textos de Tareas-->
+    <string name="textoTareaRealizada">Tarea Realizada</string>
+    <string name="textoTareaNoRealizada">Tarea No Realizada</string>
+
     <!--Textos de Asistencias-->
     <string name="textoTituloCambiarAsistencia">Cambiar Asistencia</string>
-    <string name="textoCambiarAsistenciaDescripción">Elija una de las tres opciones:</string>
-    <string name="textoOpcionAsistirAfirmativa">Asistiré</string>
-    <string name="textoOpcionAsistirNegativa">No Asistiré</string>
-    <string name="textoOpcionAsistirDubitativa">No Sé Si Asistiré</string>
     <string name="textoSiAsistir">Asistencia: Si</string>
     <string name="textoNoAsistir">Asistencia: No</string>
     <string name="textoNoSeSiAsistir">Asistencia: Tal vez</string>
@@ -61,7 +68,7 @@
     <string name="errorContrasenaYConfirmacion">Tu contraseña y su confirmación no son iguales</string>
     <string name="errorContrasenaIncorrecta">La contraseña es incorrecta</string>
     <string name="errorNuevaContrasenaYConfirmacion">Tu nueva contraseña y su confirmación no son iguales</string>
-    <string name="errorTextosVacíos">Debes rellenar todos los textos</string>
+    <string name="errorTextosVacíos">Debes rellenar todos los datos</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

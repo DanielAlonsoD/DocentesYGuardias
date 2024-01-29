@@ -1,99 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
-    android:id="@+id/layoutFijarTarea"
+    android:id="@+id/layoutCrearMensaje"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FijarTareaActivity">
+    tools:context=".CrearMensajeActivity">
 
     <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/encabezadoFijarTarea"
+        android:id="@+id/encabezadoCrearMensaje"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="20dp"
         app:navigationIcon="@drawable/arrow_back"
-        app:title="@string/textoFijarTareas"/>
+        app:title="@string/textoCrearMensaje"/>
 
     <Spinner
-        android:id="@+id/spinnerCicloFijarTarea"
+        android:id="@+id/spinnerCicloCrearMensaje"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/encabezadoFijarTarea"
+        android:layout_below="@id/encabezadoCrearMensaje"
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
         android:paddingTop="8dp"
         android:paddingBottom="8dp"/>
 
-    <Spinner
-        android:id="@+id/spinnerProfesorFijarTarea"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputDestinatariosCrearMensaje"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/spinnerCicloFijarTarea"
-        android:layout_marginTop="10dp"
+        android:layout_below="@id/spinnerCicloCrearMensaje"
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
-        android:paddingTop="8dp"
-        android:paddingBottom="8dp"/>
+        android:layout_marginBottom="10dp"
+        android:hint="@string/textoDestinatarios"
+        app:startIconDrawable="@drawable/person"
+        app:endIconMode="dropdown_menu">
 
-    <Spinner
-        android:id="@+id/spinnerTipoTareaFijarTarea"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/spinnerProfesorFijarTarea"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
-        android:paddingTop="8dp"
-        android:paddingBottom="8dp"/>
-
-    <LinearLayout
-        android:id="@+id/layoutFechaEntregaFijarTarea"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/spinnerTipoTareaFijarTarea"
-        android:layout_marginTop="10dp"
-        android:gravity="center"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/textoFechaEntregaFijarTarea"
-            android:layout_width="wrap_content"
+        <MultiAutoCompleteTextView
+            android:id="@+id/textoInsertarDestinatariosCrearMensaje"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginRight="20dp"
-            android:text="@string/textoFechaNumero"
-            android:textSize="18sp"/>
+            android:inputType="text"/>
 
-        <ImageButton
-            android:id="@+id/botonFechaEntregaFijarTarea"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/calendar"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
-    </LinearLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputTituloCrearMensaje"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textInputDestinatariosCrearMensaje"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
+        android:hint="@string/textoTitulo"
+        app:startIconDrawable="@drawable/mail"
+        app:endIconMode="clear_text">
+
+        <EditText
+            android:id="@+id/textoInsertarTituloCrearMensaje"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
-        android:id="@+id/textoDescripcionFijarTarea"
+        android:id="@+id/textoMensajeCrearMensaje"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/layoutFechaEntregaFijarTarea"
-        android:layout_marginTop="10dp"
+        android:layout_below="@id/textInputTituloCrearMensaje"
         android:layout_marginLeft="10dp"
-        android:text="@string/textoDescripcion"
+        android:text="@string/textoMensaje"
         android:textSize="20sp"/>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputDescripcionFijarTarea"
+        android:id="@+id/textInputMensajeCrearMensaje"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/textoDescripcionFijarTarea"
+        android:layout_below="@id/textoMensajeCrearMensaje"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         app:endIconMode="clear_text">
 
         <EditText
-            android:id="@+id/textoInsertarDescripcionFijarTarea"
+            android:id="@+id/textoInsertarMensajeCrearMensaje"
             android:layout_width="match_parent"
             android:layout_height="241dp"
             android:gravity="start"/>
@@ -101,7 +93,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/botonRealizadoFijarTarea"
+        android:id="@+id/botonRealizadoCrearMensaje"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"

@@ -41,8 +41,8 @@ public class InicioSesionActivity extends AppCompatActivity implements View.OnCl
         if (view.getId() == R.id.botonIniciarSesionInicioSesion) {
             LinearLayout layout = findViewById(R.id.layoutInicioSesion);
 
-            String correo = textoCorreo.getText().toString();
-            String contrasena = textoContrasena.getText().toString();
+            String correo = textoCorreo.getText().toString().trim();
+            String contrasena = textoContrasena.getText().toString().trim();
 
             if (correo.isEmpty() || contrasena.isEmpty()) {
                 Snackbar.make(layout, R.string.errorTextosVacíos, Snackbar.LENGTH_SHORT).show();

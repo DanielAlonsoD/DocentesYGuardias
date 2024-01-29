@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@+id/layoutElementoTarea"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/imagenElementoTarea"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/close"
+        app:tint="@color/red"/>
+
+    <LinearLayout
+        android:id="@+id/layoutDatosElementoTarea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/imagenElementoTarea"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textoTipoTareaElementoTarea"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/textoNombre"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/textoRealizadaElementoTarea"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/textoTareaNoRealizada"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:id="@+id/textoFechaEntregaElementoTarea"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/textoFechaNumero"
+            android:textSize="15sp"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

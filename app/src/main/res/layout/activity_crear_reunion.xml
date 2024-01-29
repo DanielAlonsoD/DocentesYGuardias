@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/layoutCrearReunion"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CrearReunionActivity">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/encabezadoCrearReunion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:navigationIcon="@drawable/arrow_back"
+        app:title="@string/textoCrearReunion"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputInvitadosCrearReunion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/encabezadoCrearReunion"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:hint="@string/textoInvitados"
+        app:startIconDrawable="@drawable/person"
+        app:endIconMode="dropdown_menu">
+
+        <MultiAutoCompleteTextView
+            android:id="@+id/textoInsertarInvitadosCrearReunion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutFechaHoraInicioCrearReunion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textInputInvitadosCrearReunion"
+        android:layout_marginTop="35dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textoFechaHoraInicioCrearReunion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:text="@string/textoFechaHoraNumero"
+            android:textSize="18sp"/>
+
+        <ImageButton
+            android:id="@+id/botonFechaHoraInicioCrearReunion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/calendar"/>
+
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/botonRealizadoCrearReunion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/check"
+        app:maxImageSize="30dp" />
+
+</RelativeLayout>

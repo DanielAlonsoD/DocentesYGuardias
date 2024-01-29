@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/layoutElaborarInforme"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ElaborarInformeActivity">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/encabezadoElaborarInforme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="60dp"
+        app:navigationIcon="@drawable/arrow_back"
+        app:title="@string/textoElaborarInforme"/>
+
+    <Spinner
+        android:id="@+id/spinnerGuardiaElaborarInforme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/encabezadoElaborarInforme"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"/>
+
+    <TextView
+        android:id="@+id/textoDescripcionElaborarInforme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/spinnerGuardiaElaborarInforme"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="10dp"
+        android:text="@string/textoDescripcion"
+        android:textSize="20sp"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputDescripcionElaborarInforme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textoDescripcionElaborarInforme"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        app:endIconMode="clear_text">
+
+        <EditText
+            android:id="@+id/textoInsertarDescripcionElaborarInforme"
+            android:layout_width="match_parent"
+            android:layout_height="241dp"
+            android:gravity="start"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/botonRealizadoElaborarInforme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/check"
+        app:maxImageSize="30dp" />
+
+</RelativeLayout>
