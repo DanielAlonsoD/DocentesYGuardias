@@ -69,10 +69,17 @@ public class CalendarioFragment extends Fragment implements TabLayout.OnTabSelec
                 }
             });
 
-            Fragment fragmentoHorario = new HorarioFragment();
-            fragmentoHorario.setArguments(usuario);
-            cargarFragmento(fragmentoHorario);
-
+            switch (usuario.getInt("navegacionCaledario")) {
+                case 1:
+                    Fragment fragmentoHorario = new HorarioFragment();
+                    fragmentoHorario.setArguments(usuario);
+                    cargarFragmento(fragmentoHorario);
+                case 2:
+                    Fragment fragmentoReuniones = new ReunionesFragment();
+                    usuario.putInt("navegacionCaledario", 1);
+                    fragmentoReuniones.setArguments(usuario);
+                    cargarFragmento(fragmentoReuniones);
+            }
 
         return view;
     }

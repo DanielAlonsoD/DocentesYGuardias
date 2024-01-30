@@ -83,7 +83,7 @@ public class FijarTareaActivity extends AppCompatActivity implements View.OnClic
             public void onNothingSelected(AdapterView<?> parent) {}
         });
 
-        String[] tareas = {"Selecciona una opción", "Entregas", "Firmas"};
+        String[] tareas = {"Selecciona una opción", "Entrega", "Firma"};
         spinnerTipoTarea.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, tareas));
         spinnerTipoTarea.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override

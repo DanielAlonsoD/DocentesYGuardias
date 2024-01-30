@@ -54,6 +54,8 @@ public class InicioSesionActivity extends AppCompatActivity implements View.OnCl
                     if (profesor.getCorreo().equals(correo) && profesor.getContrasena().equals(contrasena)) {
                         Bundle usuario = new Bundle();
                         usuario.putParcelable("profesor", profesor);
+                        usuario.putInt("navegacionMenu", 1);
+                        usuario.putInt("navegacionCaledario", 1);
                         Intent actividadMenuPrincipal = new Intent(this, MenuPrincipalActivity.class);
                         actividadMenuPrincipal.putExtras(usuario);
                         startActivity(actividadMenuPrincipal);

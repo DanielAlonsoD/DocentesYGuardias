@@ -25,8 +25,8 @@ public class AdaptadorTareas extends ArrayAdapter<Tarea> {
     private ArrayList<Tarea> tareas;
 
 
-    public AdaptadorTareas(@NonNull Context context, int resource, @NonNull ArrayList<Tarea> tareas) {
-        super(context, R.layout.elemento_tarea_lista);
+    public AdaptadorTareas(@NonNull Context context, @NonNull ArrayList<Tarea> tareas) {
+        super(context, R.layout.elemento_tarea_lista, tareas);
         this.tareas = tareas;
     }
 
@@ -41,8 +41,6 @@ public class AdaptadorTareas extends ArrayAdapter<Tarea> {
         TextView textoRealizada = view.findViewById(R.id.textoRealizadaElementoTarea);
         TextView textoFechaEntrega = view.findViewById(R.id.textoFechaEntregaElementoTarea);
 
-        textoTipoTarea.setText(tareas.get(position).getTipoTarea());
-
         boolean realizado = tareas.get(position).isRealizado();
         if (realizado) {
             imagenTareaRealizada.setImageResource(R.drawable.check);
@@ -54,9 +52,8 @@ public class AdaptadorTareas extends ArrayAdapter<Tarea> {
             textoRealizada.setText(R.string.textoTareaNoRealizada);
         }
 
-        DateTimeFormatter formateadorFecha = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        LocalDate fecha = tareas.get(position).getFechaFin();
-        textoFechaEntrega.setText(fecha.format(formateadorFecha));
+        textoTipoTarea.setText(tareas.get(position).getTipoTarea());
+        textoFechaEntrega.setText(tareas.get(position).getFechaFin());
 
         return view;
     }

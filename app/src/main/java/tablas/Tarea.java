@@ -1,16 +1,23 @@
 package tablas;
 
+import android.os.Build;
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
+
 import java.time.LocalDate;
 
-public class Tarea {
+public class Tarea implements Parcelable {
     private int id;
     private String dniProfesor;
     private String tipoTarea;
     private String tarea;
-    private LocalDate fechaFin;
+    private String fechaFin;
     private boolean realizado;
 
-    public Tarea(int id, String dniProfesor, String tipoTarea, String tarea, LocalDate fechaFin, boolean realizado) {
+    public Tarea(int id, String dniProfesor, String tipoTarea, String tarea, String fechaFin, boolean realizado) {
         this.id = id;
         this.dniProfesor = dniProfesor;
         this.tipoTarea = tipoTarea;
@@ -18,6 +25,27 @@ public class Tarea {
         this.fechaFin = fechaFin;
         this.realizado = realizado;
     }
+
+    protected Tarea(Parcel in) {
+        id = in.readInt();
+        dniProfesor = in.readString();
+        tipoTarea = in.readString();
+        tarea = in.readString();
+        fechaFin = in.readString();
+        realizado = in.readByte() != 0;
+    }
+
+    public static final Creator<Tarea> CREATOR = new Creator<Tarea>() {
+        @Override
+        public Tarea createFromParcel(Parcel in) {
+            return new Tarea(in);
+        }
+
+        @Override
+        public Tarea[] newArray(int size) {
+            return new Tarea[size];
+        }
+    };
 
     public int getId() {
         return id;
@@ -51,11 +79,11 @@ public class Tarea {
         this.tarea = tarea;
     }
 
-    public LocalDate getFechaFin() {
+    public String getFechaFin() {
         return fechaFin;
     }
 
-    public void setFechaFin(LocalDate fechaFin) {
+    public void setFechaFin(String fechaFin) {
         this.fechaFin = fechaFin;
     }
 
@@ -65,5 +93,20 @@ public class Tarea {
 
     public void setRealizado(boolean realizado) {
         this.realizado = realizado;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(@NonNull Parcel dest, int flags) {
+        dest.writeInt(id);
+        dest.writeString(dniProfesor);
+        dest.writeString(tipoTarea);
+        dest.writeString(tarea);
+        dest.writeString(fechaFin);
+        dest.writeByte((byte) (realizado ? 1 : 0));
     }
 }

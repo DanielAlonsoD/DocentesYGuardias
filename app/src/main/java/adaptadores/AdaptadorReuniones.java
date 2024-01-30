@@ -1,5 +1,7 @@
 package adaptadores;
 
+import static androidx.core.app.ActivityCompat.recreate;
+
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -19,6 +21,7 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 
 import com.example.docentesyguardias.R;
+import com.example.docentesyguardias.ReunionesFragment;
 import com.google.android.material.button.MaterialButton;
 
 import java.time.LocalDateTime;
@@ -32,7 +35,7 @@ public class AdaptadorReuniones extends ArrayAdapter<Reunion> implements View.On
     private ArrayList<Reunion> reuniones;
     private ImageView imagenAsistencia;
     private TextView textoAsistencia;
-    private int itemSelected;
+    private int itemSelected, posicion;
 
 
     public AdaptadorReuniones(@NonNull Context contexto, @NonNull ArrayList<Reunion> reuniones) {
@@ -47,19 +50,21 @@ public class AdaptadorReuniones extends ArrayAdapter<Reunion> implements View.On
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         View view = LayoutInflater.from(getContext()).inflate(R.layout.elemento_reunion_lista, parent, false);
 
+        posicion = position;
+
         imagenAsistencia = view.findViewById(R.id.imagenElementoReunion);
         TextView textoCreadorReunion = view.findViewById(R.id.textoCreadorElementoReunion);
         textoAsistencia = view.findViewById(R.id.textoAusenciaElementoReunion);
         TextView textoFechaHora = view.findViewById(R.id.textoFechaHoraElementoReunion);
         MaterialButton botonCambiarAsistencia = view.findViewById(R.id.botonCambiarAsistenciaReunion);
 
-        String asistencia = reuniones.get(position).getAsistencia();
+        String asistencia = reuniones.get(posicion).getAsistencia();
 
-        textoCreadorReunion.setText(reuniones.get(position).getDniProfesor().toString());
+        textoCreadorReunion.setText(reuniones.get(posicion).getDniProfesor().toString());
 
         establecerAsistencia(asistencia);
 
-        LocalDateTime fechaHora = reuniones.get(position).getFechaHora();
+        LocalDateTime fechaHora = reuniones.get(posicion).getFechaHora();
         DateTimeFormatter formateadorDeFechaHora = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
         textoFechaHora.setText(fechaHora.format(formateadorDeFechaHora));
 

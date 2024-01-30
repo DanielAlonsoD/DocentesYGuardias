@@ -41,10 +41,7 @@ public class AdaptadorMensajes extends ArrayAdapter<Mensaje> {
 
         textoEmisor.setText(mensajes.get(position).getDniProfesorEmisor());
         textoTitulo.setText(mensajes.get(position).getMensaje());
-        LocalDate fecha = mensajes.get(position).getFecha();
-        DateTimeFormatter formateadorDeFecha = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-
-        textoFecha.setText(fecha.format(formateadorDeFecha));
+        textoFecha.setText(mensajes.get(position).getFecha());
 
         return view;
     }

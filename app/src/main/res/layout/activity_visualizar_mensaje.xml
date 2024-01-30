@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/layoutVisualizarMensaje"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".VisualizarMensajeActivity">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/encabezadoVisualizarMensaje"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:navigationIcon="@drawable/arrow_back"
+        app:title="@string/textoMensaje"/>
+
+    <TextView
+        android:id="@+id/textoProfesorEmisor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/textoNombre"/>
+
+    <TextView
+        android:id="@+id/textoTituloVisualizarMensaje"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/encabezadoVisualizarMensaje"
+        android:text="@string/textoTitulo"
+        android:textAlignment="center"
+        android:textSize="30sp"/>
+
+    <TextView
+        android:id="@+id/textoMensajeVisualizarMensaje"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textoTituloVisualizarMensaje"
+        android:text="@string/textoMensaje"
+        android:textAlignment="center"
+        android:textSize="15sp"/>
+
+</RelativeLayout>

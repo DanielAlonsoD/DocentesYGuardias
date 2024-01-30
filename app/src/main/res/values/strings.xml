@@ -20,6 +20,7 @@
     <string name="textoRegistrarse">Registrarse</string>
     <string name="textoPerfil">Perfil</string>
     <string name="textoMensajes">Mensajes</string>
+    <string name="textoMensaje">Mensaje</string>
     <string name="textoGenerarPermiso">Generar Permiso</string>
     <string name="textoAdministrarTareas">Administrar Tareas</string>
     <string name="textoFijarTareas">Fijar Tarea</string>
@@ -44,7 +45,7 @@
     <string name="textoDestinatarios">Destinatarios</string>
     <string name="textoInvitados">Invitados</string>
     <string name="textoTitulo">Título</string>
-    <string name="textoMensaje">Mensaje:</string>
+    <string name="textoInsertarMensaje">Mensaje:</string>
     <string name="textoRazon">Razón</string>
     <string name="textoDescripcion">Descripción:</string>
     <string name="textoOpcional">Opcional</string>

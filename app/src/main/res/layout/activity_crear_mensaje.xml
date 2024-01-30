@@ -72,7 +72,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/textInputTituloCrearMensaje"
         android:layout_marginLeft="10dp"
-        android:text="@string/textoMensaje"
+        android:text="@string/textoInsertarMensaje"
         android:textSize="20sp"/>
 
     <com.google.android.material.textfield.TextInputLayout

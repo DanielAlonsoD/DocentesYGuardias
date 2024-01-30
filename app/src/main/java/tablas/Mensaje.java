@@ -7,9 +7,9 @@ public class Mensaje {
     private String dniProfesorEmisor;
     private String dniProfesorReceptor;
     private String mensaje;
-    private LocalDate fecha;
+    private String fecha;
 
-    public Mensaje(int id, String dniProfesorEmisor, String dniProfesorReceptor, String mensaje, LocalDate fecha) {
+    public Mensaje(int id, String dniProfesorEmisor, String dniProfesorReceptor, String mensaje, String fecha) {
         this.id = id;
         this.dniProfesorEmisor = dniProfesorEmisor;
         this.dniProfesorReceptor = dniProfesorReceptor;
@@ -49,11 +49,11 @@ public class Mensaje {
         this.mensaje = mensaje;
     }
 
-    public LocalDate getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(LocalDate fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
 }

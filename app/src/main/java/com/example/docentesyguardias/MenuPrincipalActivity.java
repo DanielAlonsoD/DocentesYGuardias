@@ -33,7 +33,14 @@ public class MenuPrincipalActivity extends AppCompatActivity implements Toolbar.
         BottomNavigationView barraInferior = findViewById(R.id.barraInferiorMenuProfesor);
         barraInferior.setOnItemSelectedListener(this::onNavigationItemSelected);
 
-        navController.navigate(R.id.inicioFragment, usuario);
+        switch (usuario.getInt("navegacionMenu")) {
+            case 1:
+                navController.navigate(R.id.inicioFragment, usuario);
+                break;
+            case 2:
+                navController.navigate(R.id.calendarioFragment, usuario);
+                usuario.putInt("navegacionMenu", 1);
+        }
     }
 
     @Override
