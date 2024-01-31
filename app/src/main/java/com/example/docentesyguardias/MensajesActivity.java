@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.google.android.material.appbar.MaterialToolbar;
@@ -42,16 +43,23 @@ public class MensajesActivity extends AppCompatActivity implements View.OnClickL
         encabezado.setNavigationOnClickListener(this);
         botonCrear.setOnClickListener(this);
         mensajes = new ArrayList<Mensaje>();
-        Mensaje m1 = new Mensaje(1, "712", "1", "Hola", "12/12/2023");
-        Mensaje m2 = new Mensaje(2, "712", "1", "Hola", "10/01/2024");
-        Mensaje m3 = new Mensaje(3, "712", "1", "Hola", "20/11/2023");
+        Mensaje m1 = new Mensaje(1, "712", "1", "Hola", "asdasdasdasvgdfag","12/12/2023");
+        Mensaje m2 = new Mensaje(2, "712", "1", "Hola", "asdasdasdasvgdfag","10/01/2024");
+        Mensaje m3 = new Mensaje(3, "712", "1", "Hola", "asdasdasdasvgdfag","20/11/2023");
         mensajes.add(m1);
         mensajes.add(m2);
         mensajes.add(m3);
         AdaptadorMensajes adaptador = new AdaptadorMensajes(this, mensajes);
         listaMensajes.setAdapter(adaptador);
-        Log.i("mensajeError", mensajes.size()+"");
-
+        listaMensajes.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent actividadVisualizar = new Intent(MensajesActivity.this, VisualizarMensajeActivity.class);
+                usuario.putParcelable("mensajeSeleccionado", mensajes.get(position));
+                actividadVisualizar.putExtras(usuario);
+                startActivity(actividadVisualizar);
+            }
+        });
     }
 
     @Override

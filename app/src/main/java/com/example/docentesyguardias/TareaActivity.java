@@ -43,7 +43,10 @@ public class TareaActivity extends AppCompatActivity implements View.OnClickList
         textoDescripcion.setText(tarea.getTarea());
         textoFechaFinTarea.setText(tarea.getFechaFin());
 
-        String[] opciones = {"Selecciona una opción", "Realizada", "No Realizada"};
+        String[] opciones = {"No Realizada", "Realizada"};
+        if (tarea.isRealizado()) {
+            opciones = new String[]{"Realizada", "No Realizada"};
+        }
         spinnerTareaRealizada.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, opciones));
         spinnerTareaRealizada.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -62,9 +65,13 @@ public class TareaActivity extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.botonRealizadoCambiarTarea) {
-
+            Intent actividadAdministrarTareas = new Intent(this, AdministrarTareasActivity.class);
+            actividadAdministrarTareas.putExtras(usuario);
+            startActivity(actividadAdministrarTareas);
         } else {
-
+            Intent actividadAdministrarTareas = new Intent(this, AdministrarTareasActivity.class);
+            actividadAdministrarTareas.putExtras(usuario);
+            startActivity(actividadAdministrarTareas);
         }
     }
 }

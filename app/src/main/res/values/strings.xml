@@ -13,6 +13,7 @@
     <string name="textoHorario">Horario</string>
     <string name="textoReuniones">Reuniones</string>
     <string name="textoCrearMensaje">Crear Mensaje</string>
+    <string name="textoReunion">Reunión</string>
     <string name="textoCrearReunion">Crear Reunión</string>
 
     <!--Texto utilizado en diferentes elementos-->
