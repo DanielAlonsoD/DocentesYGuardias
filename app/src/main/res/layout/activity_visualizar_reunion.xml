@@ -16,23 +16,35 @@
         app:title="@string/textoReunion"/>
 
     <TextView
-        android:id="@+id/textoProfesorAnfitriónVisualizarReunion"
+        android:id="@+id/textoProfesorAnfitrionVisualizarReunion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/encabezadoVisualizarReunion"
+        android:layout_marginTop="30dp"
         android:text="@string/textoNombre"
         android:textAlignment="center"
-        android:textSize="25sp"/>
+        android:textSize="30sp"/>
 
     <Spinner
         android:id="@+id/spinnerAsistenciaVisualizarReunion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/textoProfesorAnfitriónVisualizarReunion"
+        android:layout_below="@id/textoProfesorAnfitrionVisualizarReunion"
+        android:layout_marginTop="20dp"
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
         android:paddingTop="8dp"
         android:paddingBottom="8dp"/>
+
+    <TextView
+        android:id="@+id/textoFechaVisualiarReunion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/spinnerAsistenciaVisualizarReunion"
+        android:layout_marginTop="20dp"
+        android:text="@string/textoFechaHoraNumero"
+        android:textAlignment="center"
+        android:textSize="20sp"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/botonRealizadoVisualizarReunion"

@@ -31,11 +31,11 @@ import java.util.ArrayList;
 import tablas.Reunion;
 
 
-public class AdaptadorReuniones extends ArrayAdapter<Reunion> implements View.OnClickListener{
+public class AdaptadorReuniones extends ArrayAdapter<Reunion> {
     private ArrayList<Reunion> reuniones;
     private ImageView imagenAsistencia;
     private TextView textoAsistencia;
-    private int itemSelected, posicion;
+    private int posicion;
 
 
     public AdaptadorReuniones(@NonNull Context contexto, @NonNull ArrayList<Reunion> reuniones) {
@@ -50,49 +50,19 @@ public class AdaptadorReuniones extends ArrayAdapter<Reunion> implements View.On
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         View view = LayoutInflater.from(getContext()).inflate(R.layout.elemento_reunion_lista, parent, false);
 
-        posicion = position;
-
         imagenAsistencia = view.findViewById(R.id.imagenElementoReunion);
         TextView textoCreadorReunion = view.findViewById(R.id.textoCreadorElementoReunion);
         textoAsistencia = view.findViewById(R.id.textoAusenciaElementoReunion);
         TextView textoFechaHora = view.findViewById(R.id.textoFechaHoraElementoReunion);
-        MaterialButton botonCambiarAsistencia = view.findViewById(R.id.botonCambiarAsistenciaReunion);
 
-        String asistencia = reuniones.get(posicion).getAsistencia();
+        String asistencia = reuniones.get(position).getAsistencia();
 
-        textoCreadorReunion.setText(reuniones.get(posicion).getDniProfesor().toString());
+        textoCreadorReunion.setText(reuniones.get(position).getDniProfesor().toString());
+        textoFechaHora.setText(reuniones.get(position).getFechaHora());
 
         establecerAsistencia(asistencia);
 
-        LocalDateTime fechaHora = reuniones.get(posicion).getFechaHora();
-        DateTimeFormatter formateadorDeFechaHora = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
-        textoFechaHora.setText(fechaHora.format(formateadorDeFechaHora));
-
-        botonCambiarAsistencia.setOnClickListener(this);
-
         return view;
-    }
-
-    @Override
-    public void onClick(View v) {
-        String[] opciones = {"Asistiré", "No Asistiré", "No Sé Si Asistiré"};
-        itemSelected = -1;
-
-        AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
-        builder.setTitle(R.string.textoTituloCambiarAsistencia);
-        builder.setSingleChoiceItems(opciones, itemSelected, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                itemSelected = which;
-            }
-        });
-        builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                establecerAsistencia(opciones[itemSelected]);
-            }
-        });
-        builder.show();
     }
 
     public void establecerAsistencia(String asistencia) {

@@ -72,7 +72,6 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
                 Bundle usuario = new Bundle();
                 usuario.putParcelable("profesor", profesor);
                 usuario.putInt("navegacionMenu", 1);
-                usuario.putInt("navegacionCaledario", 1);
                 Intent actividadMenuPrincipal = new Intent(RegistroActivity.this, MenuPrincipalActivity.class);
                 actividadMenuPrincipal.putExtras(usuario);
                 startActivity(actividadMenuPrincipal);

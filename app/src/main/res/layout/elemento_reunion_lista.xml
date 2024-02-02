@@ -43,14 +43,4 @@
 
     </LinearLayout>
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/botonCambiarAsistenciaReunion"
-        style="?attr/buttonStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginRight="10dp"
-        android:layout_alignParentRight="true"
-        android:text="@string/textoAsistencia" />
-
 </RelativeLayout>

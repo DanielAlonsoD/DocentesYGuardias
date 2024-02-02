@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -52,12 +53,21 @@ public class ReunionesFragment extends Fragment implements View.OnClickListener 
             botonCrear.setVisibility(View.GONE);
         }
 
-        reuniones.add(new Reunion(1, "71186545D", "Asistiré", LocalDateTime.of(1, 1,1,1,1)));
-        reuniones.add(new Reunion(2, "71186545D", "No Sé Si Asistiré", LocalDateTime.of(1, 1,1,1,1)));
-        reuniones.add(new Reunion(3, "71186545D", "No Asistiré", LocalDateTime.of(1, 1,1,1,1)));
+        reuniones.add(new Reunion(1, "71186545D", "Asistiré", "01/01/0001 01:01"));
+        reuniones.add(new Reunion(2, "71186545D", "No Sé Si Asistiré", "01/01/0001 01:01"));
+        reuniones.add(new Reunion(3, "71186545D", "No Asistiré", "01/01/0001 01:01"));
 
         AdaptadorReuniones adaptador = new AdaptadorReuniones(getContext(), reuniones);
         lista.setAdapter(adaptador);
+        lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent actividadVisualizar = new Intent(getActivity(), VisualizarReunionActivity.class);
+                usuario.putParcelable("reunionSeleccionado", reuniones.get(position));
+                actividadVisualizar.putExtras(usuario);
+                startActivity(actividadVisualizar);
+            }
+        });
 
         botonCrear.setOnClickListener(this);
 
