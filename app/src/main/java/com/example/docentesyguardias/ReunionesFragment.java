@@ -53,9 +53,9 @@ public class ReunionesFragment extends Fragment implements View.OnClickListener 
             botonCrear.setVisibility(View.GONE);
         }
 
-        reuniones.add(new Reunion(1, "71186545D", "Asistiré", "01/01/0001 01:01"));
-        reuniones.add(new Reunion(2, "71186545D", "No Sé Si Asistiré", "01/01/0001 01:01"));
-        reuniones.add(new Reunion(3, "71186545D", "No Asistiré", "01/01/0001 01:01"));
+        reuniones.add(new Reunion(1, "71186545D", "Asistiré", "08/02/2024 08:30"));
+        reuniones.add(new Reunion(2, "71186545D", "No Sé Si Asistiré", "12/03/2024 09:30"));
+        reuniones.add(new Reunion(3, "71186545D", "No Asistiré", "15/03/2024 11:00"));
 
         AdaptadorReuniones adaptador = new AdaptadorReuniones(getContext(), reuniones);
         lista.setAdapter(adaptador);

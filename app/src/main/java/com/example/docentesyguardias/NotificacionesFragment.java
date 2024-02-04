@@ -49,14 +49,14 @@ public class NotificacionesFragment extends Fragment {
         if (usuario.isEmpty()) {
         } else if (profesor.getTipoProfesor().equals("Jefe de Estudios")) {
             ausencias = new ArrayList<>();
-            ausencias.add(new Ausencia(1, "23asda", "baja", LocalDateTime.of(1, 1,1,1,1), LocalDateTime.of(1,1,1,1,1)));
+            ausencias.add(new Ausencia(1, "711869T", "baja", LocalDateTime.of(2024, 2,12,8,15), LocalDateTime.of(2024,3,1,14,15)));
             AdaptadorAusencias adaptador = new AdaptadorAusencias(getContext(), ausencias);
             lista.setAdapter(adaptador);
         } else {
             guardias = new ArrayList<>();
-            guardias.add(new Guardia(1, "23asda",1, LocalDateTime.of(1, 1,1,1,1), LocalDateTime.of(1,1,1,1,1)));
-            guardias.add(new Guardia(2, "23asda",2, LocalDateTime.of(1, 1,1,1,1), LocalDateTime.of(1,1,1,1,1)));
-            guardias.add(new Guardia(3, "23asda",3, LocalDateTime.of(1, 1,1,1,1), LocalDateTime.of(1,1,1,1,1)));
+            guardias.add(new Guardia(1, "711869T",1, LocalDateTime.of(2024, 2,12,8,15), LocalDateTime.of(2024,3,1,14,15)));
+            guardias.add(new Guardia(2, "711869T",2, LocalDateTime.of(2024, 3,7,8,15), LocalDateTime.of(2024,3,8,10,5)));
+            guardias.add(new Guardia(3, "711869T",3, LocalDateTime.of(2024, 3,10,8,15), LocalDateTime.of(2024,3,13,11,30)));
             AdaptadorGuardias adaptador = new AdaptadorGuardias(getContext(), guardias);
             lista.setAdapter(adaptador);
         }

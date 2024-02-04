@@ -40,7 +40,7 @@ public class AdaptadorMensajes extends ArrayAdapter<Mensaje> {
         TextView textoFecha = view.findViewById(R.id.textoFechaElementoMensaje);
 
         textoEmisor.setText(mensajes.get(position).getDniProfesorEmisor());
-        textoTitulo.setText(mensajes.get(position).getMensaje());
+        textoTitulo.setText(mensajes.get(position).getTitulo());
         textoFecha.setText(mensajes.get(position).getFecha());
 
         return view;

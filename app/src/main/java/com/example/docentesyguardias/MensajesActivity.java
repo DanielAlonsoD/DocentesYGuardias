@@ -43,9 +43,9 @@ public class MensajesActivity extends AppCompatActivity implements View.OnClickL
         encabezado.setNavigationOnClickListener(this);
         botonCrear.setOnClickListener(this);
         mensajes = new ArrayList<Mensaje>();
-        Mensaje m1 = new Mensaje(1, "712", "1", "Hola", "asdasdasdasvgdfag","12/12/2023");
-        Mensaje m2 = new Mensaje(2, "712", "1", "Hola", "asdasdasdasvgdfag","10/01/2024");
-        Mensaje m3 = new Mensaje(3, "712", "1", "Hola", "asdasdasdasvgdfag","20/11/2023");
+        Mensaje m1 = new Mensaje(1, "712565F", "1", "Saludo", "Este es un mensaje para saludar al usuario","12/12/2023");
+        Mensaje m2 = new Mensaje(2, "714334D", "1", "Entrega de Firmas", "asdasdasdasvgdfag","10/01/2024");
+        Mensaje m3 = new Mensaje(3, "716545T", "1", "Visita Mañana", "asdasdasdasvgdfag","20/11/2023");
         mensajes.add(m1);
         mensajes.add(m2);
         mensajes.add(m3);
