@@ -2,6 +2,9 @@ package tablas;
 
 import java.time.LocalTime;
 
+/**
+ * @author Daniel Alonso
+ */
 public class Horario {
     private int id;
     private String dniProfesor;

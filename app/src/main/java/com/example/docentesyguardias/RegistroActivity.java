@@ -17,6 +17,9 @@ import com.google.android.material.snackbar.Snackbar;
 
 import tablas.Profesor;
 
+/**
+ * @author Daniel Alonso
+ */
 public class RegistroActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
     private Profesor profesor = new Profesor();
     private EditText textoDNI;

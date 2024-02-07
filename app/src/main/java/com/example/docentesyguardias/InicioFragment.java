@@ -13,6 +13,9 @@ import com.google.android.material.button.MaterialButton;
 
 import tablas.Profesor;
 
+/**
+ * @author Daniel Alonso
+ */
 public class InicioFragment extends Fragment implements View.OnClickListener {
     private Bundle usuario = new Bundle();
     private Profesor profesor;

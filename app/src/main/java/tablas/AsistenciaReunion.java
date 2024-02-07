@@ -1,5 +1,8 @@
 package tablas;
 
+/**
+ * @author Daniel Alonso
+ */
 public class AsistenciaReunion {
     private int id;
     private int reunion;

@@ -13,6 +13,9 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import tablas.Profesor;
 
+/**
+ * @author Daniel Alonso
+ */
 public class PerfilActivity extends AppCompatActivity implements View.OnClickListener {
     private Bundle usuario;
 

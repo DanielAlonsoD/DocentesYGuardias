@@ -8,6 +8,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+/**
+ * @author Daniel Alonso
+ */
 public class HorarioFragment extends Fragment {
 
     public HorarioFragment() {

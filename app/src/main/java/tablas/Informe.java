@@ -1,5 +1,8 @@
 package tablas;
 
+/**
+ * @author Daniel Alonso
+ */
 public class Informe {
     private int id;
     private String dniProfesor;

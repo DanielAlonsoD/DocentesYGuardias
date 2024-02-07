@@ -2,6 +2,9 @@ package tablas;
 
 import java.time.LocalDateTime;
 
+/**
+ * @author Daniel Alonso
+ */
 public class Ausencia {
     private int id;
     private String dniProfesor;

@@ -14,6 +14,9 @@ import com.google.android.material.snackbar.Snackbar;
 
 import tablas.Profesor;
 
+/**
+ * @author Daniel Alonso
+ */
 public class CambiarContrasenaActivity extends AppCompatActivity implements View.OnClickListener {
     private Bundle usuario;
     private Profesor profesor;

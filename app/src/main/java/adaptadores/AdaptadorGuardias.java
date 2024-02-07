@@ -19,6 +19,9 @@ import java.util.ArrayList;
 
 import tablas.Guardia;
 
+/**
+ * @author Daniel Alonso
+ */
 public class AdaptadorGuardias extends ArrayAdapter<Guardia> {
     private ArrayList<Guardia> guardias;
 

@@ -13,6 +13,9 @@ import com.google.android.material.tabs.TabLayout;
 
 import tablas.Profesor;
 
+/**
+ * @author Daniel Alonso
+ */
 public class CalendarioFragment extends Fragment implements TabLayout.OnTabSelectedListener {
     Bundle usuario = new Bundle();
     Profesor profesor;

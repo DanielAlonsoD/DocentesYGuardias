@@ -7,6 +7,9 @@ import androidx.annotation.NonNull;
 
 import java.time.LocalDateTime;
 
+/**
+ * @author Daniel Alonso
+ */
 public class Reunion implements Parcelable {
     private int id;
     private String dniProfesor;

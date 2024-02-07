@@ -19,6 +19,9 @@ import java.util.ArrayList;
 
 import tablas.Ausencia;
 
+/**
+ * @author Daniel Alonso
+ */
 public class AdaptadorAusencias extends ArrayAdapter<Ausencia> {
     private ArrayList<Ausencia> ausencias;
 

@@ -25,6 +25,9 @@ import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 
+/**
+ * @author Daniel Alonso
+ */
 public class CrearReunionActivity extends AppCompatActivity implements View.OnClickListener {
     private Bundle usuario;
     private MultiAutoCompleteTextView textoInvitados;

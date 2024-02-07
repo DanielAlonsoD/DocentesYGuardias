@@ -15,6 +15,9 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import tablas.Reunion;
 
+/**
+ * @author Daniel Alonso
+ */
 public class VisualizarReunionActivity extends AppCompatActivity implements View.OnClickListener {
     private Bundle usuario;
 

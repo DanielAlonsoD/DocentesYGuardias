@@ -22,6 +22,9 @@ import adaptadores.AdaptadorReuniones;
 import tablas.Profesor;
 import tablas.Reunion;
 
+/**
+ * @author Daniel Alonso
+ */
 public class ReunionesFragment extends Fragment implements View.OnClickListener {
     Bundle usuario = new Bundle();
     Profesor profesor = new Profesor();

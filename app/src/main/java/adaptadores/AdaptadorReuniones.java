@@ -30,7 +30,9 @@ import java.util.ArrayList;
 
 import tablas.Reunion;
 
-
+/**
+ * @author Daniel Alonso
+ */
 public class AdaptadorReuniones extends ArrayAdapter<Reunion> {
     private ArrayList<Reunion> reuniones;
     private ImageView imagenAsistencia;

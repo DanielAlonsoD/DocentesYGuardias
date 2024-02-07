@@ -20,6 +20,9 @@ import tablas.Ausencia;
 import tablas.Guardia;
 import tablas.Profesor;
 
+/**
+ * @author Daniel Alonso
+ */
 public class NotificacionesFragment extends Fragment {
     private Bundle usuario = new Bundle();
     private Profesor profesor;

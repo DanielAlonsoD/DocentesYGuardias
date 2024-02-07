@@ -24,6 +24,9 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 
+/**
+ * @author Daniel Alonso
+ */
 public class FijarTareaActivity extends AppCompatActivity implements View.OnClickListener{
     private Bundle usuario;
     private TextView textoFechaEntrega;

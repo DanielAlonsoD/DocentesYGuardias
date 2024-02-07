@@ -20,6 +20,9 @@ import adaptadores.AdaptadorMensajes;
 import tablas.Mensaje;
 import tablas.Profesor;
 
+/**
+ * @author Daniel Alonso
+ */
 public class MensajesActivity extends AppCompatActivity implements View.OnClickListener {
     private Bundle usuario;
     private ArrayList<Mensaje> mensajes;

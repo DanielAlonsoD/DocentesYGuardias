@@ -17,6 +17,9 @@ import com.google.android.material.snackbar.Snackbar;
 
 import tablas.Profesor;
 
+/**
+ * @author Daniel Alonso
+ */
 public class EditarPerfilActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
     private Bundle usuario;
     private Profesor profesor;

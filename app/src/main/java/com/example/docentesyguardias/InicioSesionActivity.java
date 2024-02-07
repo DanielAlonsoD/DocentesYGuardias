@@ -15,6 +15,9 @@ import com.google.android.material.snackbar.Snackbar;
 
 import tablas.Profesor;
 
+/**
+ * @author Daniel Alonso
+ */
 public class InicioSesionActivity extends AppCompatActivity implements View.OnClickListener {
     private Profesor profesorPrueba1 = new Profesor("78945367G", "Pepe", "pepe.sangor@sanviatorvalladolid.com", "Docente", "Técnico Informático", "123456");
     private Profesor profesorPrueba2 = new Profesor("78269292Q", "Pepa", "pepa.margar@sanviatorvalladolid.com", "Coordinador", "Ciencias Sociales", "123456");

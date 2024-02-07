@@ -26,6 +26,9 @@ import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 
+/**
+ * @author Daniel Alonso
+ */
 public class AsignarGuardiaActivity extends AppCompatActivity implements View.OnClickListener {
     private Bundle usuario;
     private Calendar calendario;

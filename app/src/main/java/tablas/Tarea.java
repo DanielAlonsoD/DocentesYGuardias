@@ -9,6 +9,9 @@ import androidx.annotation.RequiresApi;
 
 import java.time.LocalDate;
 
+/**
+ * @author Daniel Alonso
+ */
 public class Tarea implements Parcelable {
     private int id;
     private String dniProfesor;

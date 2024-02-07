@@ -19,6 +19,9 @@ import com.google.android.material.textfield.TextInputLayout;
 
 import tablas.Profesor;
 
+/**
+ * @author Daniel Alonso
+ */
 public class CrearMensajeActivity extends AppCompatActivity implements View.OnClickListener {
     private Bundle usuario;
     private Profesor profesor;

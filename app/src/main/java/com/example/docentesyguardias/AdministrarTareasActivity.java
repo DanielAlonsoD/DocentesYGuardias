@@ -18,6 +18,9 @@ import java.util.ArrayList;
 import adaptadores.AdaptadorTareas;
 import tablas.Tarea;
 
+/**
+ * @author Daniel Alonso
+ */
 public class AdministrarTareasActivity extends AppCompatActivity implements View.OnClickListener {
     private Bundle usuario;
     private ArrayList<Tarea> tareas;

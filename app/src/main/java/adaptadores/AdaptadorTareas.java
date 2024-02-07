@@ -21,6 +21,9 @@ import java.util.ArrayList;
 
 import tablas.Tarea;
 
+/**
+ * @author Daniel Alonso
+ */
 public class AdaptadorTareas extends ArrayAdapter<Tarea> {
     private ArrayList<Tarea> tareas;
 

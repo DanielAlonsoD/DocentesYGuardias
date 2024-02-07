@@ -11,6 +11,9 @@ import com.google.android.material.appbar.MaterialToolbar;
 
 import tablas.Mensaje;
 
+/**
+ * @author Daniel Alonso
+ */
 public class VisualizarMensajeActivity extends AppCompatActivity implements View.OnClickListener {
     private Bundle usuario;
 

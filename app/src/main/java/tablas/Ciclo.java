@@ -1,5 +1,8 @@
 package tablas;
 
+/**
+ * @author Daniel Alonso
+ */
 public class Ciclo {
     private int id;
     private String dniProfesor;

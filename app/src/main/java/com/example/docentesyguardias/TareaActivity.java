@@ -20,6 +20,9 @@ import java.time.format.DateTimeFormatter;
 
 import tablas.Tarea;
 
+/**
+ * @author Daniel Alonso
+ */
 public class TareaActivity extends AppCompatActivity implements View.OnClickListener {
     private Bundle usuario;
 

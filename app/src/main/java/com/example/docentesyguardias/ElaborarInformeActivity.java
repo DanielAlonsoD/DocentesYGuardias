@@ -15,6 +15,9 @@ import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
+/**
+ * @author Daniel Alonso
+ */
 public class ElaborarInformeActivity extends AppCompatActivity implements View.OnClickListener {
     private Bundle usuario;
     private EditText textoDescripcion;

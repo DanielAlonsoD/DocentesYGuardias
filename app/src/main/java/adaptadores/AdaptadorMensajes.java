@@ -19,6 +19,9 @@ import java.util.ArrayList;
 
 import tablas.Mensaje;
 
+/**
+ * @author Daniel Alonso
+ */
 public class AdaptadorMensajes extends ArrayAdapter<Mensaje> {
     private ArrayList<Mensaje> mensajes;
 

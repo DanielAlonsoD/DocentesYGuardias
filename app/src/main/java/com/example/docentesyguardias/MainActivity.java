@@ -8,6 +8,9 @@ import android.view.View;
 
 import com.google.android.material.button.MaterialButton;
 
+/**
+ * @author Daniel Alonso
+ */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override

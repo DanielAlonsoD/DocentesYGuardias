@@ -7,6 +7,9 @@ import androidx.annotation.NonNull;
 
 import java.time.LocalDate;
 
+/**
+ * @author Daniel Alonso
+ */
 public class Mensaje implements Parcelable {
     private int id;
     private String dniProfesorEmisor;
