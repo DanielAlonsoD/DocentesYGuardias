@@ -15,11 +15,10 @@ import android.widget.ListView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 import adaptadores.AdaptadorReuniones;
-import tablas.Profesor;
+import tablas.Usuario;
 import tablas.Reunion;
 
 /**
@@ -27,7 +26,7 @@ import tablas.Reunion;
  */
 public class ReunionesFragment extends Fragment implements View.OnClickListener {
     Bundle usuario = new Bundle();
-    Profesor profesor = new Profesor();
+    Usuario usuarioDatos = new Usuario();
     ArrayList<Reunion> reuniones = new ArrayList<>();
 
     public ReunionesFragment() {
@@ -39,7 +38,7 @@ public class ReunionesFragment extends Fragment implements View.OnClickListener 
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             usuario = getArguments();
-            profesor = usuario.getParcelable("profesor");
+            usuarioDatos = usuario.getParcelable("profesor");
         }
     }
 
@@ -52,7 +51,7 @@ public class ReunionesFragment extends Fragment implements View.OnClickListener 
         FloatingActionButton botonCrear = view.findViewById(R.id.botonCrearReunion);
 
         if (usuario.isEmpty()){
-        } else if (profesor.getTipoProfesor().equals("Docente")) {
+        } else if (usuarioDatos.getTipoProfesor().equals("Docente")) {
             botonCrear.setVisibility(View.GONE);
         }
 

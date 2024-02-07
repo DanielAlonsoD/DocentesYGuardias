@@ -15,13 +15,13 @@ import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.snackbar.Snackbar;
 
-import tablas.Profesor;
+import tablas.Usuario;
 
 /**
  * @author Daniel Alonso
  */
 public class RegistroActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
-    private Profesor profesor = new Profesor();
+    private Usuario usuario = new Usuario();
     private EditText textoDNI;
     private EditText textoNombre;
     private EditText textoCorreo;
@@ -64,16 +64,16 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
             String confirmarContrasena = textoConfirmarContrasena.getText().toString();
             if (dni.isEmpty() || nombre.isEmpty() || correo.isEmpty() || titulacion.isEmpty() || contrasena.isEmpty() || confirmarContrasena.isEmpty()) {
                 Snackbar.make(layout, R.string.errorTextosVacíos, Snackbar.LENGTH_SHORT).show();
-            } else if (profesor.getTipoProfesor().equals("Selecciona uno")) {
+            } else if (usuario.getTipoProfesor().equals("Selecciona uno")) {
                 Snackbar.make(layout, R.string.errorTipoProfesorNoInsertado, Snackbar.LENGTH_SHORT).show();
             } else if (contrasena.equals(confirmarContrasena)) {
-                profesor.setdNI(dni);
-                profesor.setNombre(nombre);
-                profesor.setCorreo(correo);
-                profesor.setTitulacion(titulacion);
-                profesor.setContrasena(contrasena);
+                usuario.setdNI(dni);
+                usuario.setNombre(nombre);
+                usuario.setCorreo(correo);
+                usuario.setTitulacion(titulacion);
+                usuario.setContrasena(contrasena);
                 Bundle usuario = new Bundle();
-                usuario.putParcelable("profesor", profesor);
+                //usuario.putParcelable("profesor", this.usuario);
                 usuario.putInt("navegacionMenu", 1);
                 Intent actividadMenuPrincipal = new Intent(RegistroActivity.this, MenuPrincipalActivity.class);
                 actividadMenuPrincipal.putExtras(usuario);
@@ -89,7 +89,7 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        profesor.setTipoProfesor(parent.getItemAtPosition(position).toString());
+        usuario.setTipoProfesor(parent.getItemAtPosition(position).toString());
     }
 
     @Override

@@ -17,14 +17,14 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputLayout;
 
-import tablas.Profesor;
+import tablas.Usuario;
 
 /**
  * @author Daniel Alonso
  */
 public class CrearMensajeActivity extends AppCompatActivity implements View.OnClickListener {
     private Bundle usuario;
-    private Profesor profesor;
+    private Usuario usuarioDatos;
     private MultiAutoCompleteTextView textoDestinatarios;
     private EditText textoTitulo, textoMensaje;
     private String ciclo;
@@ -36,7 +36,7 @@ public class CrearMensajeActivity extends AppCompatActivity implements View.OnCl
         setContentView(R.layout.activity_crear_mensaje);
 
         usuario = getIntent().getExtras();
-        profesor = usuario.getParcelable("profesor");
+        usuarioDatos = usuario.getParcelable("profesor");
 
         MaterialToolbar encabezado = findViewById(R.id.encabezadoCrearMensaje);
         Spinner spinnerCiclo = findViewById(R.id.spinnerCicloCrearMensaje);
@@ -46,7 +46,7 @@ public class CrearMensajeActivity extends AppCompatActivity implements View.OnCl
         textoMensaje = findViewById(R.id.textoInsertarMensajeCrearMensaje);
         FloatingActionButton botonRealizado = findViewById(R.id.botonRealizadoCrearMensaje);
 
-        if (profesor.getTipoProfesor().equals("Jefe de Estudios")) {
+        if (usuarioDatos.getTipoProfesor().equals("Jefe de Estudios")) {
             String[] ciclos = {"Selecciona un ciclo", "Todos", "DAM"};
             spinnerCiclo.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, ciclos));
             spinnerCiclo.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -90,7 +90,7 @@ public class CrearMensajeActivity extends AppCompatActivity implements View.OnCl
             String titulo = textoTitulo.getText().toString().trim();
             String mensaje = textoMensaje.getText().toString().trim();
 
-            if ((profesor.getTipoProfesor().equals("Jefe de Estudios") && ciclo.equals("Selecciona un ciclo")) || destinatarios.isEmpty() || titulo.isEmpty() || mensaje.isEmpty()) {
+            if ((usuarioDatos.getTipoProfesor().equals("Jefe de Estudios") && ciclo.equals("Selecciona un ciclo")) || destinatarios.isEmpty() || titulo.isEmpty() || mensaje.isEmpty()) {
                 RelativeLayout layout = findViewById(R.id.layoutCrearMensaje);
                 Snackbar.make(layout, R.string.errorTextosVacíos, Snackbar.LENGTH_SHORT).show();
             } else {

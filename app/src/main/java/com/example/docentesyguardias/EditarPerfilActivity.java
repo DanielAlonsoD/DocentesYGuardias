@@ -15,14 +15,14 @@ import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
-import tablas.Profesor;
+import tablas.Usuario;
 
 /**
  * @author Daniel Alonso
  */
 public class EditarPerfilActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
     private Bundle usuario;
-    private Profesor profesor;
+    private Usuario usuarioDatos;
     private String tipoProfesor;
     private EditText textoDNI;
     private EditText textoNombre;
@@ -35,7 +35,7 @@ public class EditarPerfilActivity extends AppCompatActivity implements View.OnCl
         setContentView(R.layout.activity_editar_perfil);
 
         usuario = getIntent().getExtras();
-        profesor = usuario.getParcelable("profesor");
+        usuarioDatos = usuario.getParcelable("profesor");
 
         MaterialToolbar encabezado = findViewById(R.id.encabezadoEditarPerfil);
         Spinner spinnerTipoProfesor = findViewById(R.id.spinnerTipoProfesorEditarPerfil);
@@ -46,7 +46,7 @@ public class EditarPerfilActivity extends AppCompatActivity implements View.OnCl
         FloatingActionButton botonRealizado = findViewById(R.id.botonRealizadoEditarPerfil);
 
         String[] tipoProfesores = new String[2];
-        switch (profesor.getTipoProfesor()) {
+        switch (usuarioDatos.getTipoProfesor()) {
             case "Docente":
                 tipoProfesores = new String[]{"Docente", "Coordinador", "Jefe de Estudios"};
                 break;
@@ -59,10 +59,10 @@ public class EditarPerfilActivity extends AppCompatActivity implements View.OnCl
         }
         spinnerTipoProfesor.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, tipoProfesores));
 
-        textoDNI.setText(profesor.getdNI());
-        textoNombre.setText(profesor.getNombre());
-        textoCorreo.setText(profesor.getCorreo());
-        textoTitulacion.setText(profesor.getTitulacion());
+        textoDNI.setText(usuarioDatos.getdNI());
+        textoNombre.setText(usuarioDatos.getNombre());
+        textoCorreo.setText(usuarioDatos.getCorreo());
+        textoTitulacion.setText(usuarioDatos.getTitulacion());
 
         encabezado.setNavigationOnClickListener(this);
         spinnerTipoProfesor.setOnItemSelectedListener(this);
@@ -81,14 +81,14 @@ public class EditarPerfilActivity extends AppCompatActivity implements View.OnCl
                 RelativeLayout layout = findViewById(R.id.layoutEditarPerfil);
                 Snackbar.make(layout, R.string.errorTextosVacíos, Snackbar.LENGTH_SHORT).show();
             } else {
-                profesor.setdNI(dni);
-                profesor.setNombre(nombre);
-                profesor.setCorreo(correo);
+                usuarioDatos.setdNI(dni);
+                usuarioDatos.setNombre(nombre);
+                usuarioDatos.setCorreo(correo);
                 if (!tipoProfesor.isEmpty()) {
-                    profesor.setTipoProfesor(tipoProfesor);
+                    usuarioDatos.setTipoProfesor(tipoProfesor);
                 }
-                profesor.setTitulacion(titulacion);
-                usuario.putParcelable("profesor", profesor);
+                usuarioDatos.setTitulacion(titulacion);
+                //usuario.putParcelable("profesor", usuarioDatos);
                 actividadPerfil.putExtras(usuario);
                 startActivity(actividadPerfil);
             }

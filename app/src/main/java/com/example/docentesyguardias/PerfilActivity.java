@@ -11,7 +11,7 @@ import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import tablas.Profesor;
+import tablas.Usuario;
 
 /**
  * @author Daniel Alonso
@@ -24,8 +24,8 @@ public class PerfilActivity extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil);
 
-        usuario = getIntent().getExtras();
-        Profesor profesor = usuario.getParcelable("profesor");
+        this.usuario = getIntent().getExtras();
+        Usuario usuario = this.usuario.getParcelable("profesor");
 
         MaterialToolbar encabezado = findViewById(R.id.encabezadoPerfil);
         TextView textoTipoProfesor = findViewById(R.id.textoTipoProfesorPerfil);
@@ -36,11 +36,11 @@ public class PerfilActivity extends AppCompatActivity implements View.OnClickLis
         FloatingActionButton botonEditarPerfil = findViewById(R.id.botonEditarPerfil);
         ExtendedFloatingActionButton botonCambiarContrasena = findViewById(R.id.botonCambiarContrasena);
 
-        textoTipoProfesor.setText(profesor.getTipoProfesor());
-        textoDNI.setText(profesor.getdNI());
-        textoNombre.setText(profesor.getNombre());
-        textoCorreo.setText(profesor.getCorreo());
-        textoTitulacion.setText(profesor.getTitulacion());
+        textoTipoProfesor.setText(usuario.getTipoProfesor());
+        textoDNI.setText(usuario.getdNI());
+        textoNombre.setText(usuario.getNombre());
+        textoCorreo.setText(usuario.getCorreo());
+        textoTitulacion.setText(usuario.getTitulacion());
 
         encabezado.setNavigationOnClickListener(this);
         botonEditarPerfil.setOnClickListener(this);

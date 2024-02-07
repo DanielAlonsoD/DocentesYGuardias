@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -13,12 +12,11 @@ import android.widget.ListView;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 
 import adaptadores.AdaptadorMensajes;
 import tablas.Mensaje;
-import tablas.Profesor;
+import tablas.Usuario;
 
 /**
  * @author Daniel Alonso
@@ -33,14 +31,14 @@ public class MensajesActivity extends AppCompatActivity implements View.OnClickL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mensajes);
 
-        usuario = getIntent().getExtras();
-        Profesor profesor = usuario.getParcelable("profesor");
+        this.usuario = getIntent().getExtras();
+        Usuario usuario = this.usuario.getParcelable("profesor");
 
         MaterialToolbar encabezado = findViewById(R.id.encabezadoMensajes);
         ListView listaMensajes = findViewById(R.id.listaMensajes);
         FloatingActionButton botonCrear = findViewById(R.id.botonCrearMensaje);
 
-        if (profesor.getTipoProfesor().equals("Docente")) {
+        if (usuario.getTipoProfesor().equals("Docente")) {
             botonCrear.setVisibility(View.GONE);
         }
         encabezado.setNavigationOnClickListener(this);
@@ -58,8 +56,8 @@ public class MensajesActivity extends AppCompatActivity implements View.OnClickL
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent actividadVisualizar = new Intent(MensajesActivity.this, VisualizarMensajeActivity.class);
-                usuario.putParcelable("mensajeSeleccionado", mensajes.get(position));
-                actividadVisualizar.putExtras(usuario);
+                MensajesActivity.this.usuario.putParcelable("mensajeSeleccionado", mensajes.get(position));
+                actividadVisualizar.putExtras(MensajesActivity.this.usuario);
                 startActivity(actividadVisualizar);
             }
         });

@@ -12,14 +12,14 @@ import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
-import tablas.Profesor;
+import tablas.Usuario;
 
 /**
  * @author Daniel Alonso
  */
 public class CambiarContrasenaActivity extends AppCompatActivity implements View.OnClickListener {
     private Bundle usuario;
-    private Profesor profesor;
+    private Usuario usuarioDatos;
     private EditText textoViejaContrasena;
     private EditText textoNuevaContrasena;
     private EditText textoConfirmarContrasena;
@@ -30,7 +30,7 @@ public class CambiarContrasenaActivity extends AppCompatActivity implements View
         setContentView(R.layout.activity_cambiar_contrasena);
 
         usuario = getIntent().getExtras();
-        profesor = usuario.getParcelable("profesor");
+        usuarioDatos = usuario.getParcelable("profesor");
 
         MaterialToolbar encabezado = findViewById(R.id.encabezadoCambiarContrasena);
         textoViejaContrasena = findViewById(R.id.textoInsertarContrasenaCambiarContrasena);
@@ -52,11 +52,11 @@ public class CambiarContrasenaActivity extends AppCompatActivity implements View
             String confirmarContrasena = textoConfirmarContrasena.getText().toString();
             if (viejaContrasena.isEmpty() || nuevaContrasena.isEmpty() || confirmarContrasena.isEmpty()) {
                 Snackbar.make(layout, R.string.errorTextosVacíos, Snackbar.LENGTH_SHORT).show();
-            } else if (!profesor.getContrasena().equals(viejaContrasena)) {
+            } else if (!usuarioDatos.getContrasena().equals(viejaContrasena)) {
                 Snackbar.make(layout, R.string.errorContrasenaIncorrecta, Snackbar.LENGTH_SHORT).show();
             } else if (nuevaContrasena.equals(confirmarContrasena)) {
-                profesor.setContrasena(nuevaContrasena);
-                usuario.putParcelable("profesor", profesor);
+                usuarioDatos.setContrasena(nuevaContrasena);
+                //usuario.put("profesor", usuarioDatos);
                 actividadPerfil.putExtras(usuario);
                 startActivity(actividadPerfil);
             } else {

@@ -8,7 +8,7 @@ import androidx.annotation.NonNull;
 /**
  * @author Daniel Alonso
  */
-public class Profesor implements Parcelable {
+public class Usuario {
     private String dNI;
     private String nombre;
     private String correo;
@@ -16,10 +16,10 @@ public class Profesor implements Parcelable {
     private String titulacion;
     private String contrasena;
 
-    public Profesor() {
+    public Usuario() {
     }
 
-    public Profesor(String dNI, String nombre, String correo, String tipoProfesor, String titulacion, String contrasena) {
+    public Usuario(String dNI, String nombre, String correo, String tipoProfesor, String titulacion, String contrasena) {
         this.dNI = dNI;
         this.nombre = nombre;
         this.correo = correo;
@@ -27,27 +27,6 @@ public class Profesor implements Parcelable {
         this.titulacion = titulacion;
         this.contrasena = contrasena;
     }
-
-    protected Profesor(Parcel in) {
-        dNI = in.readString();
-        nombre = in.readString();
-        correo = in.readString();
-        tipoProfesor = in.readString();
-        titulacion = in.readString();
-        contrasena = in.readString();
-    }
-
-    public static final Creator<Profesor> CREATOR = new Creator<Profesor>() {
-        @Override
-        public Profesor createFromParcel(Parcel in) {
-            return new Profesor(in);
-        }
-
-        @Override
-        public Profesor[] newArray(int size) {
-            return new Profesor[size];
-        }
-    };
 
     public String getdNI() {
         return dNI;
@@ -95,21 +74,6 @@ public class Profesor implements Parcelable {
 
     public void setContrasena(String contrasena) {
         this.contrasena = contrasena;
-    }
-
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(@NonNull Parcel dest, int flags) {
-        dest.writeString(dNI);
-        dest.writeString(nombre);
-        dest.writeString(correo);
-        dest.writeString(tipoProfesor);
-        dest.writeString(titulacion);
-        dest.writeString(contrasena);
     }
 
 }

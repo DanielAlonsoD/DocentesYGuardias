@@ -11,14 +11,14 @@ import android.view.ViewGroup;
 
 import com.google.android.material.button.MaterialButton;
 
-import tablas.Profesor;
+import tablas.Usuario;
 
 /**
  * @author Daniel Alonso
  */
 public class InicioFragment extends Fragment implements View.OnClickListener {
     private Bundle usuario = new Bundle();
-    private Profesor profesor;
+    private Usuario usuarioDatos;
 
     public InicioFragment() {
         // Required empty public constructor
@@ -29,7 +29,7 @@ public class InicioFragment extends Fragment implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             usuario = getArguments();
-            profesor = usuario.getParcelable("profesor");
+            usuarioDatos = usuario.getParcelable("profesor");
         }
     }
 
@@ -46,7 +46,7 @@ public class InicioFragment extends Fragment implements View.OnClickListener {
         MaterialButton botonElaboracionInformes = view.findViewById(R.id.botonElaboracionInformes);
 
         if (usuario.isEmpty()) {
-        } else if (profesor.getTipoProfesor().equals("Jefe de Estudios")) {
+        } else if (usuarioDatos.getTipoProfesor().equals("Jefe de Estudios")) {
             botonGestionarPermisos.setVisibility(View.GONE);
             botonTareasAdministrativas.setVisibility(View.GONE);
             botonNotificarAusencias.setVisibility(View.GONE);

@@ -1,5 +1,6 @@
 package com.example.docentesyguardias;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -12,16 +13,22 @@ import android.widget.LinearLayout;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
-import tablas.Profesor;
+import tablas.Usuario;
 
 /**
  * @author Daniel Alonso
  */
 public class InicioSesionActivity extends AppCompatActivity implements View.OnClickListener {
-    private Profesor profesorPrueba1 = new Profesor("78945367G", "Pepe", "pepe.sangor@sanviatorvalladolid.com", "Docente", "Técnico Informático", "123456");
-    private Profesor profesorPrueba2 = new Profesor("78269292Q", "Pepa", "pepa.margar@sanviatorvalladolid.com", "Coordinador", "Ciencias Sociales", "123456");
-    private Profesor profesorPrueba3 = new Profesor("79967541T", "Pedro", "pedro.sanmar@sanviatorvalladolid.com", "Jefe de Estudios", "Administración Pública", "123456");
+    private DatabaseReference baseDeDatos;
+    private Usuario usuarioPrueba1 = new Usuario("78945367G", "Pepe", "pepe.sangor@sanviatorvalladolid.com", "Docente", "Técnico Informático", "123456");
+    private Usuario usuarioPrueba2 = new Usuario("78269292Q", "Pepa", "pepa.margar@sanviatorvalladolid.com", "Coordinador", "Ciencias Sociales", "123456");
+    private Usuario usuarioPrueba3 = new Usuario("79967541T", "Pedro", "pedro.sanmar@sanviatorvalladolid.com", "Jefe de Estudios", "Administración Pública", "123456");
     private EditText textoCorreo;
     private EditText textoContrasena;
 
@@ -29,6 +36,8 @@ public class InicioSesionActivity extends AppCompatActivity implements View.OnCl
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio_sesion);
+
+        baseDeDatos = FirebaseDatabase.getInstance().getReference().child("usuario");
 
         MaterialToolbar encabezado = findViewById(R.id.encabezadoInicioSesión);
         textoCorreo = findViewById(R.id.textoInsertarCorreoInicioSesion);
@@ -50,10 +59,28 @@ public class InicioSesionActivity extends AppCompatActivity implements View.OnCl
             if (correo.isEmpty() || contrasena.isEmpty()) {
                 Snackbar.make(layout, R.string.errorTextosVacíos, Snackbar.LENGTH_SHORT).show();
             } else {
-                Profesor[] profesoresInicio = {profesorPrueba1, profesorPrueba2, profesorPrueba3};
+
+                baseDeDatos.orderByChild("correo").equalTo(correo).addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if (snapshot.exists()) {
+                            for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                                String contrasenaBBDD = dataSnapshot.child("contrasena").getValue(String.class);
+
+                                if (contrasenaBBDD.equals(contrasena)) {
+                                    Snackbar.make(layout, "Funciono", Snackbar.LENGTH_SHORT).show();
+                                }
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {}
+                });
+                /*Usuario[] profesoresInicio = {usuarioPrueba1, usuarioPrueba2, usuarioPrueba3};
                 boolean realizado = false;
 
-                for (Profesor profesor:profesoresInicio) {
+                for (Usuario profesor:profesoresInicio) {
                     if (profesor.getCorreo().equals(correo) && profesor.getContrasena().equals(contrasena)) {
                         Bundle usuario = new Bundle();
                         usuario.putParcelable("profesor", profesor);
@@ -69,7 +96,7 @@ public class InicioSesionActivity extends AppCompatActivity implements View.OnCl
                     Snackbar mensaje = Snackbar.make(layout, R.string.errorInsertarDatosInicioSesion, Snackbar.LENGTH_INDEFINITE);
                     getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
                     mensaje.show();
-                }
+                }*/
             }
 
         } else {

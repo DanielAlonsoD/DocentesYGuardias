@@ -18,14 +18,14 @@ import adaptadores.AdaptadorAusencias;
 import adaptadores.AdaptadorGuardias;
 import tablas.Ausencia;
 import tablas.Guardia;
-import tablas.Profesor;
+import tablas.Usuario;
 
 /**
  * @author Daniel Alonso
  */
 public class NotificacionesFragment extends Fragment {
     private Bundle usuario = new Bundle();
-    private Profesor profesor;
+    private Usuario usuarioDatos;
     private ArrayList<Ausencia> ausencias;
     private ArrayList<Guardia> guardias;
 
@@ -38,7 +38,7 @@ public class NotificacionesFragment extends Fragment {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             usuario = getArguments();
-            profesor = usuario.getParcelable("profesor");
+            usuarioDatos = usuario.getParcelable("profesor");
         }
     }
 
@@ -50,7 +50,7 @@ public class NotificacionesFragment extends Fragment {
         ListView lista = view.findViewById(R.id.listaNotificaciones);
 
         if (usuario.isEmpty()) {
-        } else if (profesor.getTipoProfesor().equals("Jefe de Estudios")) {
+        } else if (usuarioDatos.getTipoProfesor().equals("Jefe de Estudios")) {
             ausencias = new ArrayList<>();
             ausencias.add(new Ausencia(1, "711869T", "baja", LocalDateTime.of(2024, 2,12,8,15), LocalDateTime.of(2024,3,1,14,15)));
             AdaptadorAusencias adaptador = new AdaptadorAusencias(getContext(), ausencias);

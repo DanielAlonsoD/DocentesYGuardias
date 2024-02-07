@@ -4,21 +4,20 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.google.android.material.tabs.TabLayout;
 
-import tablas.Profesor;
+import tablas.Usuario;
 
 /**
  * @author Daniel Alonso
  */
 public class CalendarioFragment extends Fragment implements TabLayout.OnTabSelectedListener {
     Bundle usuario = new Bundle();
-    Profesor profesor;
+    Usuario usuarioDatos;
     private TabLayout tabs;
 
     public CalendarioFragment() {
@@ -30,7 +29,7 @@ public class CalendarioFragment extends Fragment implements TabLayout.OnTabSelec
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             usuario = getArguments();
-            profesor = usuario.getParcelable("profesor");
+            usuarioDatos = usuario.getParcelable("profesor");
         }
     }
 
