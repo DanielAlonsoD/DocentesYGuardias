@@ -13,17 +13,19 @@ public class Usuario {
     private String nombre;
     private String correo;
     private String tipoProfesor;
+    private String ciclo;
     private String titulacion;
     private String contrasena;
 
     public Usuario() {
     }
 
-    public Usuario(String dNI, String nombre, String correo, String tipoProfesor, String titulacion, String contrasena) {
+    public Usuario(String dNI, String nombre, String correo, String tipoProfesor, String ciclo, String titulacion, String contrasena) {
         this.dNI = dNI;
         this.nombre = nombre;
         this.correo = correo;
         this.tipoProfesor = tipoProfesor;
+        this.ciclo = ciclo;
         this.titulacion = titulacion;
         this.contrasena = contrasena;
     }
@@ -60,6 +62,14 @@ public class Usuario {
         this.tipoProfesor = tipoProfesor;
     }
 
+    public String getCiclo() {
+        return ciclo;
+    }
+
+    public void setCiclo(String ciclo) {
+        this.ciclo = ciclo;
+    }
+
     public String getTitulacion() {
         return titulacion;
     }
@@ -75,5 +85,4 @@ public class Usuario {
     public void setContrasena(String contrasena) {
         this.contrasena = contrasena;
     }
-
 }

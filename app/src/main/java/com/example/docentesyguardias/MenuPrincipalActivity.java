@@ -13,14 +13,16 @@ import android.view.MenuItem;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 /**
  * @author Daniel Alonso
  */
 public class MenuPrincipalActivity extends AppCompatActivity implements Toolbar.OnMenuItemClickListener, NavigationBarView.OnItemSelectedListener {
-    NavController navController;
+    private NavController navController;
 
-    Bundle usuario;
+    private Bundle datos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +30,7 @@ public class MenuPrincipalActivity extends AppCompatActivity implements Toolbar.
         setContentView(R.layout.activity_menu_principal);
 
         navController = Navigation.findNavController(this, R.id.contenedorFragmentos);
-        usuario = getIntent().getExtras();
+        datos = getIntent().getExtras();
 
         MaterialToolbar encabezado = findViewById(R.id.encabezadoMenuPrincipal);
         encabezado.setOnMenuItemClickListener(this::onMenuItemClick);
@@ -36,13 +38,13 @@ public class MenuPrincipalActivity extends AppCompatActivity implements Toolbar.
         BottomNavigationView barraInferior = findViewById(R.id.barraInferiorMenuProfesor);
         barraInferior.setOnItemSelectedListener(this::onNavigationItemSelected);
 
-        switch (usuario.getInt("navegacionMenu")) {
+        switch (datos.getInt("navegacionMenu")) {
             case 1:
-                navController.navigate(R.id.inicioFragment, usuario);
+                navController.navigate(R.id.inicioFragment, datos);
                 break;
             case 2:
-                navController.navigate(R.id.calendarioFragment, usuario);
-                usuario.putInt("navegacionMenu", 1);
+                navController.navigate(R.id.calendarioFragment, datos);
+                datos.putInt("navegacionMenu", 1);
         }
     }
 
@@ -52,12 +54,12 @@ public class MenuPrincipalActivity extends AppCompatActivity implements Toolbar.
         if (item.getItemId() == R.id.itemMensajes) {
             realizado = true;
             Intent actividadMensajes = new Intent(MenuPrincipalActivity.this, MensajesActivity.class);
-            actividadMensajes.putExtras(usuario);
+            actividadMensajes.putExtras(datos);
             startActivity(actividadMensajes);
         } else if (item.getItemId() == R.id.itemPerfil) {
             realizado = true;
             Intent actividadPerfil = new Intent(MenuPrincipalActivity.this, PerfilActivity.class);
-            actividadPerfil.putExtras(usuario);
+            actividadPerfil.putExtras(datos);
             startActivity(actividadPerfil);
         } else if (item.getItemId() == R.id.itemCerrarSesion) {
             realizado = true;
@@ -72,13 +74,13 @@ public class MenuPrincipalActivity extends AppCompatActivity implements Toolbar.
         boolean realizado = false;
         if (item.getItemId() == R.id.itemInicio) {
             realizado = true;
-            navController.navigate(R.id.inicioFragment, usuario);
+            navController.navigate(R.id.inicioFragment, datos);
         } else if (item.getItemId() == R.id.itemCalendario) {
             realizado = true;
-            navController.navigate(R.id.calendarioFragment, usuario);
+            navController.navigate(R.id.calendarioFragment, datos);
         } else if (item.getItemId() == R.id.itemNotificaciones) {
             realizado = true;
-            navController.navigate(R.id.notificacionesFragment, usuario);
+            navController.navigate(R.id.notificacionesFragment, datos);
         }
         return realizado;
     }

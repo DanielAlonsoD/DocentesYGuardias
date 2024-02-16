@@ -9,16 +9,15 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.google.android.material.tabs.TabLayout;
+import com.google.firebase.database.DatabaseReference;
 
 import tablas.Usuario;
 
 /**
  * @author Daniel Alonso
  */
-public class CalendarioFragment extends Fragment implements TabLayout.OnTabSelectedListener {
-    Bundle usuario = new Bundle();
-    Usuario usuarioDatos;
-    private TabLayout tabs;
+public class CalendarioFragment extends Fragment {
+    private Bundle datos = new Bundle();
 
     public CalendarioFragment() {
         // Required empty public constructor
@@ -28,8 +27,7 @@ public class CalendarioFragment extends Fragment implements TabLayout.OnTabSelec
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            usuario = getArguments();
-            usuarioDatos = usuario.getParcelable("profesor");
+            datos = getArguments();
         }
     }
 
@@ -37,7 +35,7 @@ public class CalendarioFragment extends Fragment implements TabLayout.OnTabSelec
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_calendario, container, false);
 
-        tabs = view.findViewById(R.id.tabsCalendario);
+        TabLayout tabs = view.findViewById(R.id.tabsCalendario);
 
         tabs.addTab(tabs.newTab().setText(R.string.textoHorario));
         tabs.addTab(tabs.newTab().setText(R.string.textoReuniones));
@@ -48,12 +46,12 @@ public class CalendarioFragment extends Fragment implements TabLayout.OnTabSelec
                 switch (tab.getPosition()) {
                     case 0:
                         Fragment fragmentoHorario = new HorarioFragment();
-                        fragmentoHorario.setArguments(usuario);
+                        fragmentoHorario.setArguments(datos);
                         cargarFragmento(fragmentoHorario);
                         break;
                     case 1:
                         Fragment fragmentoReuniones = new ReunionesFragment();
-                        fragmentoReuniones.setArguments(usuario);
+                        fragmentoReuniones.setArguments(datos);
                         cargarFragmento(fragmentoReuniones);
                         break;
                 }
@@ -67,36 +65,10 @@ public class CalendarioFragment extends Fragment implements TabLayout.OnTabSelec
         });
 
         Fragment fragmentoHorario = new HorarioFragment();
-        fragmentoHorario.setArguments(usuario);
+        fragmentoHorario.setArguments(datos);
         cargarFragmento(fragmentoHorario);
 
         return view;
-    }
-
-    @Override
-    public void onTabSelected(TabLayout.Tab tab) {
-        switch (tab.getPosition()) {
-            case 0:
-                Fragment fragmentoHorario = new HorarioFragment();
-                fragmentoHorario.setArguments(usuario);
-                cargarFragmento(fragmentoHorario);
-                break;
-            case 1:
-                Fragment fragmentoReuniones = new ReunionesFragment();
-                fragmentoReuniones.setArguments(usuario);
-                cargarFragmento(fragmentoReuniones);
-                break;
-        }
-    }
-
-    @Override
-    public void onTabUnselected(TabLayout.Tab tab) {
-
-    }
-
-    @Override
-    public void onTabReselected(TabLayout.Tab tab) {
-
     }
 
     public void cargarFragmento(Fragment fragmento) {

@@ -79,6 +79,23 @@
         android:paddingBottom="8dp"/>
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputCicloRegistro"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:hint="@string/textoCiclo"
+        app:endIconMode="clear_text"
+        app:startIconDrawable="@drawable/school">
+
+        <EditText
+            android:id="@+id/textoInsertarCicloRegistro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputTitulacionRegistro"
         android:layout_width="match_parent"
         android:layout_height="54dp"

@@ -39,6 +39,7 @@
     <string name="textoNombre">Nombre</string>
     <string name="textoCorreo">Correo</string>
     <string name="textoTipoDeProfesor">Tipo de Profesor</string>
+    <string name="textoCiclo">Ciclo</string>
     <string name="textoTitulacion">Titulación</string>
     <string name="textoContrasena">Contraseña</string>
     <string name="textoNuevaContrasena">Nueva Contraseña</string>
@@ -65,7 +66,9 @@
     <string name="textoNoSeSiAsistir">Asistencia: Tal vez</string>
 
     <!--Texto de errores-->
-    <string name="errorInsertarDatosInicioSesion">El correo o la contraseña son incorrectos</string>
+    <string name="errorUsuarioNoExistente">El correo o la contraseña son incorrectos</string>
+    <string name="errorContrasenaInicioSesion">La contraseña es incorrecta</string>
+    <string name="errorUsuarioExistente">El dni o el correo ya existen, porfavor inserte unos nuevos o inicie sesión</string>
     <string name="errorTipoProfesorNoInsertado">Debes elegir una profesión antes</string>
     <string name="errorContrasenaYConfirmacion">Tu contraseña y su confirmación no son iguales</string>
     <string name="errorContrasenaIncorrecta">La contraseña es incorrecta</string>

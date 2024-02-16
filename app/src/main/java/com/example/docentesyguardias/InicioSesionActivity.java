@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
@@ -26,9 +27,6 @@ import tablas.Usuario;
  */
 public class InicioSesionActivity extends AppCompatActivity implements View.OnClickListener {
     private DatabaseReference baseDeDatos;
-    private Usuario usuarioPrueba1 = new Usuario("78945367G", "Pepe", "pepe.sangor@sanviatorvalladolid.com", "Docente", "Técnico Informático", "123456");
-    private Usuario usuarioPrueba2 = new Usuario("78269292Q", "Pepa", "pepa.margar@sanviatorvalladolid.com", "Coordinador", "Ciencias Sociales", "123456");
-    private Usuario usuarioPrueba3 = new Usuario("79967541T", "Pedro", "pedro.sanmar@sanviatorvalladolid.com", "Jefe de Estudios", "Administración Pública", "123456");
     private EditText textoCorreo;
     private EditText textoContrasena;
 
@@ -37,7 +35,7 @@ public class InicioSesionActivity extends AppCompatActivity implements View.OnCl
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio_sesion);
 
-        baseDeDatos = FirebaseDatabase.getInstance().getReference().child("usuario");
+        baseDeDatos = FirebaseDatabase.getInstance().getReference().child("usuarios");
 
         MaterialToolbar encabezado = findViewById(R.id.encabezadoInicioSesión);
         textoCorreo = findViewById(R.id.textoInsertarCorreoInicioSesion);
@@ -60,43 +58,34 @@ public class InicioSesionActivity extends AppCompatActivity implements View.OnCl
                 Snackbar.make(layout, R.string.errorTextosVacíos, Snackbar.LENGTH_SHORT).show();
             } else {
 
-                baseDeDatos.orderByChild("correo").equalTo(correo).addListenerForSingleValueEvent(new ValueEventListener() {
+                baseDeDatos.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         if (snapshot.exists()) {
-                            for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-                                String contrasenaBBDD = dataSnapshot.child("contrasena").getValue(String.class);
+                            for (DataSnapshot ds : snapshot.getChildren()) {
+                                String dni = ds.child("dNI").getValue(String.class);
+                                String correoBBDD = ds.child("correo").getValue(String.class);
+                                String contrasenaBBDD = ds.child("contrasena").getValue(String.class);
 
-                                if (contrasenaBBDD.equals(contrasena)) {
-                                    Snackbar.make(layout, "Funciono", Snackbar.LENGTH_SHORT).show();
+                                if (correoBBDD.equals(correo) && contrasenaBBDD.equals(contrasena)) {
+                                    Bundle datos = new Bundle();
+                                    datos.putInt("navegacionMenu", 1);
+                                    datos.putString("dni", dni);
+                                    Intent actividadMenuPrincipal = new Intent(InicioSesionActivity.this, MenuPrincipalActivity.class);
+                                    actividadMenuPrincipal.putExtras(datos);
+                                    startActivity(actividadMenuPrincipal);
+                                } else {
+                                    Snackbar.make(layout, R.string.errorUsuarioNoExistente, Snackbar.LENGTH_SHORT).show();
                                 }
                             }
+                        } else {
+                            Snackbar.make(layout, R.string.errorUsuarioNoExistente, Snackbar.LENGTH_SHORT).show();
                         }
                     }
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {}
                 });
-                /*Usuario[] profesoresInicio = {usuarioPrueba1, usuarioPrueba2, usuarioPrueba3};
-                boolean realizado = false;
-
-                for (Usuario profesor:profesoresInicio) {
-                    if (profesor.getCorreo().equals(correo) && profesor.getContrasena().equals(contrasena)) {
-                        Bundle usuario = new Bundle();
-                        usuario.putParcelable("profesor", profesor);
-                        usuario.putInt("navegacionMenu", 1);
-                        Intent actividadMenuPrincipal = new Intent(this, MenuPrincipalActivity.class);
-                        actividadMenuPrincipal.putExtras(usuario);
-                        startActivity(actividadMenuPrincipal);
-                        realizado = true;
-                    }
-                }
-
-                if (!realizado) {
-                    Snackbar mensaje = Snackbar.make(layout, R.string.errorInsertarDatosInicioSesion, Snackbar.LENGTH_INDEFINITE);
-                    getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
-                    mensaje.show();
-                }*/
             }
 
         } else {
