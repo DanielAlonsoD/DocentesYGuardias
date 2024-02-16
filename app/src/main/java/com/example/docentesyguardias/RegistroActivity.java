@@ -3,7 +3,9 @@ package com.example.docentesyguardias;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -22,6 +24,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import sqlhelper.UsuariosSQLHelper;
 import tablas.Usuario;
 
 /**
@@ -29,6 +32,7 @@ import tablas.Usuario;
  */
 public class RegistroActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
     private DatabaseReference baseDeDatos;
+    private SQLiteDatabase baseSQLite;
     private Usuario usuario = new Usuario();
     private EditText textoDNI, textoNombre, textoCorreo, textoCiclo, textoTitulacion, textoContrasena, textoConfirmarContrasena;
 
@@ -38,6 +42,9 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
         setContentView(R.layout.activity_registro);
 
         baseDeDatos = FirebaseDatabase.getInstance().getReference().child("usuarios");
+
+        UsuariosSQLHelper baseUsuarios = new UsuariosSQLHelper(this, "baseDeUsuario", null, 1);
+        baseSQLite = baseUsuarios.getWritableDatabase();
 
         MaterialToolbar encabezado = findViewById(R.id.encabezadoRegistro);
         textoDNI = findViewById(R.id.textoInsertarDNIRegistro);
@@ -99,6 +106,17 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
                             usuario.setTitulacion(titulacion);
                             usuario.setContrasena(contrasena);
                             baseDeDatos.child(dni).setValue(usuario);
+
+                            baseSQLite.delete("usuario", null, null);
+                            ContentValues contenidos = new ContentValues();
+                            contenidos.put("dni", dni);
+                            contenidos.put("nombre", nombre);
+                            contenidos.put("correo", correo);
+                            contenidos.put("tipoProfesor", usuario.getTipoProfesor());
+                            contenidos.put("ciclo", ciclo);
+                            contenidos.put("titulacion", titulacion);
+                            contenidos.put("contrasena", contrasena);
+                            baseSQLite.insert("usuario", null, contenidos);
 
                             Bundle datos = new Bundle();
                             datos.putInt("navegacionMenu", 1);

@@ -20,17 +20,22 @@ import android.widget.TimePicker;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 
+import tablas.Ausencia;
+
 /**
  * @author Daniel Alonso
  */
 public class CrearAusenciaActivity extends AppCompatActivity implements View.OnClickListener {
-    private Bundle usuario;
+    private DatabaseReference baseDeDatos;
+    private Bundle datos;
     private Calendar calendario;
     private TextView textoFechaHoraInicio, textoFechaHoraFin;
     private String ausencia, fechaHora;
@@ -42,7 +47,8 @@ public class CrearAusenciaActivity extends AppCompatActivity implements View.OnC
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crear_ausencia);
 
-        usuario = getIntent().getExtras();
+        baseDeDatos = FirebaseDatabase.getInstance().getReference().child("ausencias");
+        datos = getIntent().getExtras();
         calendario = Calendar.getInstance();
 
         MaterialToolbar encabezado = findViewById(R.id.encabezadoCrearAusencia);
@@ -112,13 +118,15 @@ public class CrearAusenciaActivity extends AppCompatActivity implements View.OnC
                 RelativeLayout layout = findViewById(R.id.layoutCrearAusencia);
                 Snackbar.make(layout, R.string.errorTextosVacíos, Snackbar.LENGTH_SHORT).show();
             } else {
+                baseDeDatos.push().setValue(new Ausencia(datos.getString("dni"), ausencia, fechaHoraInicio, fechaHoraFin));
+
                 Intent actividadMenuPrincipal = new Intent(this, MenuPrincipalActivity.class);
-                actividadMenuPrincipal.putExtras(usuario);
+                actividadMenuPrincipal.putExtras(datos);
                 startActivity(actividadMenuPrincipal);
             }
         } else {
             Intent actividadMenuPrincipal = new Intent(this, MenuPrincipalActivity.class);
-            actividadMenuPrincipal.putExtras(usuario);
+            actividadMenuPrincipal.putExtras(datos);
             startActivity(actividadMenuPrincipal);
         }
     }

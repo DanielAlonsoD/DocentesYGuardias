@@ -44,11 +44,10 @@ public class AdaptadorAusencias extends ArrayAdapter<Ausencia> {
 
         textoAusente.setText(ausencias.get(position).getDniProfesor());
         textoRazon.setText(ausencias.get(position).getRazon());
-        LocalDateTime fechaHoraInicio = ausencias.get(position).getFechaHoraInicio();
-        LocalDateTime fechaHoraFin = ausencias.get(position).getFechaHoraFin();
-        DateTimeFormatter formateadorDeFechaHora = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+        String fechaHoraInicio = ausencias.get(position).getFechaHoraInicio();
+        String fechaHoraFin = ausencias.get(position).getFechaHoraFin();
 
-        textoFechaHora.setText(fechaHoraInicio.format(formateadorDeFechaHora)+" - "+fechaHoraFin.format(formateadorDeFechaHora));
+        textoFechaHora.setText(fechaHoraInicio+" - "+fechaHoraFin);
 
         return view;
     }

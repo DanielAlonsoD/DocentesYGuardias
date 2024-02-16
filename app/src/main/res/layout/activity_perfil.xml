@@ -67,12 +67,21 @@
             android:gravity="center"/>
 
         <TextView
+            android:id="@+id/textoCicloPerfil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/textoCiclo"
+            android:textSize="20sp"
+            android:gravity="center"/>
+
+        <TextView
             android:id="@+id/textoTitulacionPerfil"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="@string/textoTitulacion"
-            android:textSize="35sp"
+            android:textSize="20sp"
             android:gravity="center"/>
 
     </LinearLayout>

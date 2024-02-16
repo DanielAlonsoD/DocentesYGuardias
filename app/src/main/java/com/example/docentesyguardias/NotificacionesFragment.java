@@ -68,7 +68,7 @@ public class NotificacionesFragment extends Fragment {
                             baseDeDatos = FirebaseDatabase.getInstance().getReference().child("ausencias");
                             ausencias = new ArrayList<>();
                             
-                            ausencias.add(new Ausencia(1, "711869T", "baja", LocalDateTime.of(2024, 2,12,8,15), LocalDateTime.of(2024,3,1,14,15)));
+                            ausencias.add(new Ausencia("711869T", "baja", "12-02-2024 08:15", "01-03-2024 14:15"));
                             AdaptadorAusencias adaptador = new AdaptadorAusencias(getContext(), ausencias);
                             lista.setAdapter(adaptador);
                         } else {

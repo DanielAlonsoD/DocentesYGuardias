@@ -6,26 +6,16 @@ import java.time.LocalDateTime;
  * @author Daniel Alonso
  */
 public class Ausencia {
-    private int id;
     private String dniProfesor;
     private String razon;
-    private LocalDateTime fechaHoraInicio;
-    private LocalDateTime fechaHoraFin;
+    private String fechaHoraInicio;
+    private String fechaHoraFin;
 
-    public Ausencia(int id, String dniProfesor, String razon, LocalDateTime fechaHoraInicio, LocalDateTime fechaHoraFin) {
-        this.id = id;
+    public Ausencia(String dniProfesor, String razon, String fechaHoraInicio, String fechaHoraFin) {
         this.dniProfesor = dniProfesor;
         this.razon = razon;
         this.fechaHoraInicio = fechaHoraInicio;
         this.fechaHoraFin = fechaHoraFin;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getDniProfesor() {
@@ -44,19 +34,19 @@ public class Ausencia {
         this.razon = razon;
     }
 
-    public LocalDateTime getFechaHoraInicio() {
+    public String getFechaHoraInicio() {
         return fechaHoraInicio;
     }
 
-    public void setFechaHoraInicio(LocalDateTime fechaHoraInicio) {
+    public void setFechaHoraInicio(String fechaHoraInicio) {
         this.fechaHoraInicio = fechaHoraInicio;
     }
 
-    public LocalDateTime getFechaHoraFin() {
+    public String getFechaHoraFin() {
         return fechaHoraFin;
     }
 
-    public void setFechaHoraFin(LocalDateTime fechaHoraFin) {
+    public void setFechaHoraFin(String fechaHoraFin) {
         this.fechaHoraFin = fechaHoraFin;
     }
 }

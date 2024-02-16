@@ -1,5 +1,6 @@
 package com.example.docentesyguardias;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
@@ -20,20 +21,29 @@ import android.widget.TimePicker;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 
+import tablas.Ausencia;
+
 /**
  * @author Daniel Alonso
  */
 public class GenerarPermisoActivity extends AppCompatActivity implements View.OnClickListener {
-    private Bundle usuario;
+    private DatabaseReference baseDeDatos;
+    private Bundle datos;
     private Calendar calendario;
     private TextView textoFechaHoraInicio, textoFechaHoraFin;
-    String permiso, fechaHora;
+    private String permiso, fechaHora;
+    private int id;
     private LocalDate fecha;
     private LocalTime horaYMinuto;
 
@@ -42,7 +52,8 @@ public class GenerarPermisoActivity extends AppCompatActivity implements View.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_generar_permiso);
 
-        usuario = getIntent().getExtras();
+        baseDeDatos = FirebaseDatabase.getInstance().getReference().child("ausencias");
+        datos = getIntent().getExtras();
         calendario = Calendar.getInstance();
 
         MaterialToolbar encabezado = findViewById(R.id.encabezadoGenerarPermiso);
@@ -112,13 +123,15 @@ public class GenerarPermisoActivity extends AppCompatActivity implements View.On
                 RelativeLayout layout = findViewById(R.id.layoutGenerarPermiso);
                 Snackbar.make(layout, R.string.errorTextosVacíos, Snackbar.LENGTH_SHORT).show();
             } else {
+                baseDeDatos.push().setValue(new Ausencia(datos.getString("dni"), permiso, fechaHoraInicio, fechaHoraFin));
+
                 Intent actividadMenuPrincipal = new Intent(this, MenuPrincipalActivity.class);
-                actividadMenuPrincipal.putExtras(usuario);
+                actividadMenuPrincipal.putExtras(datos);
                 startActivity(actividadMenuPrincipal);
             }
         } else {
             Intent actividadMenuPrincipal = new Intent(this, MenuPrincipalActivity.class);
-            actividadMenuPrincipal.putExtras(usuario);
+            actividadMenuPrincipal.putExtras(datos);
             startActivity(actividadMenuPrincipal);
         }
     }
